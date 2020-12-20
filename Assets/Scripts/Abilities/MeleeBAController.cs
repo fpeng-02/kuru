@@ -5,9 +5,10 @@ using UnityEngine;
 public class MeleeBAController : Ability, ICastable
 {
     [SerializeField] private GameObject meleeAttack;
-    public void abilityAction()
+
+    public override void abilityAction()
     {
-        Instantiate(meleeAttack, this.transform.position, Quaternion.Euler(new Vector3(0, 0, rotationAngle())));
+        Instantiate(meleeAttack, this.transform.position, Quaternion.Euler(new Vector3(0, 0, rotationAngle()));
     }
     public float rotationAngle()
     {

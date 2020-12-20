@@ -36,6 +36,11 @@ public class Player : Entity
             dirVect = tmpDir.normalized;
         }
 
+        if (Input.GetButtonDown("BasicAttack"))
+        {
+            abilityList[0].GetComponent<Ability>().abilityAction();
+        }
+
         // if dashing, update dash timer
         if (dashing) {
             // TODO: ignore damage while dashing

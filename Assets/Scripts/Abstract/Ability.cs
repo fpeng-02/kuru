@@ -9,7 +9,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private readonly double cooldown;
     private double cooldownProgress;
 
-
+    public abstract void abilityAction();
     public double getCooldownProgress() { return cooldownProgress; }
     public void setCooldownProgress(double cool) { cooldownProgress = cool; }
     public string getAbilityName() { return abilityName; }
