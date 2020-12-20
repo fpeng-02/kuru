@@ -70,8 +70,10 @@ MonoBehaviour:
   hitPoints: 0
   abilityList:
   - {fileID: 0}
-  speed: 0.1
+  speed: 2
   rb: {fileID: 6614510994198454443}
+  dashTimeLength: 0.2
+  camera: {fileID: 0}
 --- !u!212 &6614510994198454440
 SpriteRenderer:
   m_ObjectHideFlags: 0

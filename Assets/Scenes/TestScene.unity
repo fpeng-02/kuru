@@ -132,8 +132,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
-      propertyPath: abilityList.Array.size
-      value: 1
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 2037706064}
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: dashTimeLength
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6614510994198454444, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
