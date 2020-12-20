@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract class Entity : MonoBehaviour
+public abstract class Entity : MonoBehaviour
 {
     private double hitPoints;
     private readonly string name; 
