@@ -6,7 +6,7 @@ public abstract class Entity : MonoBehaviour
 {
     [SerializeField] private double hitPoints;
     [SerializeField] private readonly string entityName;
-    [SerializeField] private List<Ability> abilityList;
+    [SerializeField] protected List<Ability> abilityList;
 
 
     public void setHitPoints(double hp) { hitPoints = hp; }

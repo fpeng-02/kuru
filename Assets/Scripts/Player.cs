@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    [SerializeField] private float speed = 2;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private float speed = 2;
+
     private float h;
     private float v;
     void Start()
