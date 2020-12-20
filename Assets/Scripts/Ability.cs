@@ -5,14 +5,14 @@ using UnityEngine;
 public abstract class Ability : MonoBehaviour
 {
     [SerializeField] private List<Effect> effects;
-    [SerializeField] private readonly string name;
+    [SerializeField] private readonly string abilityName;
     [SerializeField] private readonly double cooldown;
     private double cooldownProgress;
 
 
     public double getCooldownProgress() { return cooldownProgress; }
     public void setCooldownProgress(double cool) { cooldownProgress = cool; }
-    public string getName() { return name; }
+    public string getAbilityName() { return abilityName; }
 
     // Start is called before the first frame update
     void Start()
