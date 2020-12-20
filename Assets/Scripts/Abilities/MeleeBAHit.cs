@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class MeleeBAHit : MonoBehaviour
 {
+
+    private Entity owner;
+    [SerializeField] private float lifespan;
     [SerializeField] private float damage = 2;
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         Entity tempEntity = col.GetComponent<Entity>();
-        if (tempEntity != null)
-        {
+        if (tempEntity != null && tempEntity.getEntityName() != owner.getEntityName()) {
+            Debug.Log("hurt something");
             tempEntity.setHitPoints(tempEntity.getHitPoints() - damage);
+            Destroy(this.gameObject);
         }
-        Destroy(this);
-
     }
-    // Start is called before the first frame update
-    void Start()
+
+    public void setOwner(Entity owner)
     {
-        
+        this.owner = owner;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        lifespan -= Time.deltaTime;
+        if (lifespan < 0) {
+            Destroy(this.gameObject);
+        }
     }
 }

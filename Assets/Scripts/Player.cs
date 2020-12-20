@@ -38,7 +38,8 @@ public class Player : Entity
 
         if (Input.GetButtonDown("BasicAttack"))
         {
-            abilityList[0].GetComponent<Ability>().abilityAction();
+            GameObject spawner = (GameObject)(Instantiate(abilitySpawners[0], this.transform));
+            spawner.GetComponent<Ability>().abilityAction();
         }
 
         // if dashing, update dash timer

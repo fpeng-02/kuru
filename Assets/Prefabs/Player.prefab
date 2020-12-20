@@ -68,12 +68,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 0
+  entityName: Player
   abilityList:
   - {fileID: 0}
+  abilitySpawners: []
   speed: 2
-  rb: {fileID: 6614510994198454443}
+  moveSpeed: 4
+  dashSpeed: 10
   dashTimeLength: 0.2
-  camera: {fileID: 0}
+  rb: {fileID: 6614510994198454443}
+  worldCam: {fileID: 0}
 --- !u!212 &6614510994198454440
 SpriteRenderer:
   m_ObjectHideFlags: 0
