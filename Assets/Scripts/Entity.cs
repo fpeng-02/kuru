@@ -22,11 +22,10 @@ abstract class Entity : MonoBehaviour
     public void move()
     {
     }
-    public void cast(ICastable ability)
+    public void cast(Castable ability)
     {
 
     }
-}
 
     // Start is called before the first frame update
     void Start()
