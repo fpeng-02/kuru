@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract class Ability : MonoBehaviour
+public abstract class Ability : MonoBehaviour
 {
     private List<Effect> effects;
     private readonly string name;
