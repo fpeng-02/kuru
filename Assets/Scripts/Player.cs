@@ -10,13 +10,13 @@ public class Player : Entity
     {
     }
 
-public void Update()
+public void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
 
         Vector3 tempVect = new Vector3(h, v, 0);
-        tempVect = tempVect.normalized * speed * Time.deltaTime;
+        tempVect = tempVect.normalized * speed;
         rb.MovePosition(rb.transform.position + tempVect);
     }
 }
