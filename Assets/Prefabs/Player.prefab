@@ -67,7 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 0
-  abilityList: []
+  abilityList:
+  - {fileID: 0}
   speed: 0.1
   rb: {fileID: 6614510994198454443}
 --- !u!212 &6614510994198454440

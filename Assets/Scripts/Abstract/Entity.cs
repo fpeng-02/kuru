@@ -13,13 +13,10 @@ public abstract class Entity : MonoBehaviour
     public double getHitPoints() { return hitPoints; }
     public string getEntityName() { return entityName; }
 
-    public void move()
-    {
+    public abstract void move();
 
-    }
-
-    public void cast(Ability ability)
+    public void cast(ICastable ability)
     {
-        
+        ability.abilityAction();
     }
 }

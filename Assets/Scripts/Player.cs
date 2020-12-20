@@ -6,14 +6,23 @@ public class Player : Entity
 {
     public float speed = 2;
     public Rigidbody2D rb;
+    private float h;
+    private float v;
     void Start()
     {
     }
 
-public void FixedUpdate()
+    public void Update()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
+        h = Input.GetAxisRaw("Horizontal");
+        v = Input.GetAxisRaw("Vertical");
+    }
+    public void FixedUpdate()
+    {
+        move();
+    }
+    public override void move()
+    {
 
         Vector3 tempVect = new Vector3(h, v, 0);
         tempVect = tempVect.normalized * speed;
