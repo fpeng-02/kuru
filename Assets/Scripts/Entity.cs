@@ -5,6 +5,7 @@ using UnityEngine;
 abstract class Entity : MonoBehaviour
 {
     private double hitPoints;
+    private readonly string name; 
 
     public void setHitPoints(double hp)
     {
@@ -13,6 +14,10 @@ abstract class Entity : MonoBehaviour
     public double getHitPoints()
     {
         return hitPoints;
+    }
+    public string getName()
+    {
+        return name;
     }
     public void move()
     {
