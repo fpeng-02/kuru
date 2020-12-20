@@ -13,7 +13,6 @@ public abstract class Ability : MonoBehaviour
     public double getCooldownProgress() { return cooldownProgress; }
     public void setCooldownProgress(double cool) { cooldownProgress = cool; }
     public string getName() { return name; }
-
     // Start is called before the first frame update
     void Start()
     {
