@@ -142,9 +142,36 @@ PrefabInstance:
       objectReference: {fileID: 2037706064}
     - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 4938965963201437549, guid: 0b8d352be8552bd4683ef2ab5e847843,
+        type: 3}
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: hitPoints
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: testAbility
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
       propertyPath: dashTimeLength
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: abilities.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: abilities.Array.data[0]
+      value: 
+      objectReference: {fileID: 8885194248236988788, guid: 2becc0e43b82cae469905a30bec9ca12,
+        type: 3}
     - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
       propertyPath: abilityList.Array.data[0]
@@ -175,12 +202,12 @@ PrefabInstance:
     - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4485282
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.57868004
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}

@@ -36,11 +36,7 @@ public class Player : Entity
             dirVect = tmpDir.normalized;
         }
 
-        if (Input.GetButtonDown("BasicAttack"))
-        {
-            GameObject spawner = (GameObject)(Instantiate(abilitySpawners[0], this.transform));
-            spawner.GetComponent<Ability>().abilityAction();
-        }
+        if (Input.GetButtonDown("BasicAttack")) { cast(0); }
 
         // if dashing, update dash timer
         if (dashing) {
