@@ -10,23 +10,10 @@ abstract class Ability : MonoBehaviour
     private double cooldownProgress;
 
 
-    public double getCooldownProgress()
-    {
-        return cooldownProgress;
-    }
-    public void setCooldownProgress(double cool)
-    {
-        cooldownProgress = cool;
-    }
+    public double getCooldownProgress() { return cooldownProgress; }
+    public void setCooldownProgress(double cool) { cooldownProgress = cool; }
+    public string getName() { return name; }
 
-    public string getName()
-    {
-        return name;
-    }
-    public void abilityAction()
-    {
-
-    }
     // Start is called before the first frame update
     void Start()
     {
