@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    public float speed = 2;
-    public Rigidbody2D rb;
+    [SerializeField] private float speed = 2;
+    [SerializeField] private Rigidbody2D rb;
     private float h;
     private float v;
     void Start()
@@ -23,7 +23,6 @@ public class Player : Entity
     }
     public override void move()
     {
-
         Vector3 tempVect = new Vector3(h, v, 0);
         tempVect = tempVect.normalized * speed;
         rb.MovePosition(rb.transform.position + tempVect);
