@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
 {
-    private List<Effect> effects;
-    private readonly string name;
-    private readonly double cooldown;
+    [SerializeField] private List<Effect> effects;
+    [SerializeField] private readonly string name;
+    [SerializeField] private readonly double cooldown;
     private double cooldownProgress;
 
 

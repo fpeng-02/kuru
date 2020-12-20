@@ -4,12 +4,12 @@ using UnityEngine;
 
 public abstract class Entity : MonoBehaviour
 {
-    private double hitPoints;
-    private readonly string name; 
+    [SerializeField] private double hitPoints;
+    [SerializeField] private readonly string entityName; 
 
     public void setHitPoints(double hp) { hitPoints = hp; }
     public double getHitPoints() { return hitPoints; }
-    public string getName() { return name; }
+    public string getEntityName() { return entityName; }
 
     public void move()
     {
