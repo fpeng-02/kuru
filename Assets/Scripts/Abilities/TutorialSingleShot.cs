@@ -16,7 +16,7 @@ public class TutorialSingleShot : GenericAbility
     {
         Vector3 playerPos = GameObject.Find("Player").transform.position;
         playerPos.z = 0.0F;
-        Vector3 dirVector = Camera.main.ScreenToWorldPoint(playerPos) - this.transform.position;
+        Vector3 dirVector = playerPos - this.transform.position;
         dirVector.z = 0;
         dirVector = dirVector.normalized;
         float angle = Mathf.Atan2(dirVector.y, dirVector.x) * Mathf.Rad2Deg;
@@ -24,6 +24,6 @@ public class TutorialSingleShot : GenericAbility
     }
     public override float getInterval(int index)
     {
-        return 0.5f;
+        return 0.1f;
     }
 }
