@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8537159745300341905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5075235420609445134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187477578d7bebc4f95546221d39f97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 300
+  entityName: Tutorial Boss
+  abilities:
+  - {fileID: 2605504861404303296, guid: e5782a7357e276d46874bb04ed08f16a, type: 3}
+--- !u!1001 &2136303872035691938
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: abilities.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: abilities.Array.data[0]
+      value: 
+      objectReference: {fileID: 8885194248236988788, guid: 2becc0e43b82cae469905a30bec9ca12,
+        type: 3}
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: abilities.Array.data[1]
+      value: 
+      objectReference: {fileID: 1087618680959621419, guid: 2d7d864c194f7ec44a7995ab2c36397f,
+        type: 3}
+    - target: {fileID: 6614510994198454444, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_Name
+      value: TutorialBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 002353491c652c9489c6743957d9bd4f, type: 3}
+--- !u!1 &5075235420609445134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6614510994198454444, guid: 002353491c652c9489c6743957d9bd4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2136303872035691938}
+  m_PrefabAsset: {fileID: 0}

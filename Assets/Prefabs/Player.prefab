@@ -71,6 +71,7 @@ MonoBehaviour:
   entityName: Player
   abilities:
   - {fileID: 8885194248236988788, guid: 2becc0e43b82cae469905a30bec9ca12, type: 3}
+  - {fileID: 1087618680959621419, guid: 2d7d864c194f7ec44a7995ab2c36397f, type: 3}
   speed: 2
   moveSpeed: 4
   dashSpeed: 10

@@ -23,6 +23,8 @@ public abstract class GenericAbility : MonoBehaviour
         Debug.Log(spawnVector);
         Debug.Log(this.transform.position);
         child.GetComponent<Projectile>().initializeDirVector(spawnVector - this.transform.position);
+        child.GetComponent<Projectile>().initializeQuaternion(spawnAngle);
+
     }
 
     public IEnumerator cast()

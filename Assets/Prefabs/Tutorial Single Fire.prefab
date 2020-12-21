@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1087618680959621421
+--- !u!1 &2605504861404303302
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1087618680959621418}
-  - component: {fileID: 1087618680959621419}
+  - component: {fileID: 2605504861404303297}
+  - component: {fileID: 2605504861404303296}
   m_Layer: 0
-  m_Name: Tutorial Single Shot
+  m_Name: Tutorial Single Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1087618680959621418
+--- !u!4 &2605504861404303297
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087618680959621421}
+  m_GameObject: {fileID: 2605504861404303302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,22 +31,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1087618680959621419
+--- !u!114 &2605504861404303296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087618680959621421}
+  m_GameObject: {fileID: 2605504861404303302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e66ccad83c6abd0498af85f65c8e899e, type: 3}
+  m_Script: {fileID: 11500000, guid: b36fdfc3115121e40a2eefcab4b0554e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0
-  abilityName: 
+  cooldown: 3
+  abilityName: Tutorial Single Fire
   attacks:
   - {fileID: 2508099184500051154, guid: 12a9b0bc07dedb148bca20c90a6a1794, type: 3}
   intervals: []
-  spawnDistance: 0.01
+  spawnDistance: 0
   size: 0

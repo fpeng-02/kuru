@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAbility : GenericAbility
+public class PlayerSingleShot : GenericAbility
 {
-    public override GameObject getAttack(int index) { return this.attacks[0]; }
+    public override GameObject getAttack(int index) { return attacks[0]; }
 
     public override Vector3 getSpawnVector(int index)
     {
+        /*
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 0.0F;
         Vector3 dirVector = Camera.main.ScreenToWorldPoint(mousePos) - this.transform.position;
         dirVector.z = 0;
         dirVector = dirVector.normalized;
-        return this.transform.position + dirVector * spawnDistance;
+        return this.transform.position + dirVector * spawnDistance; */
+        return this.transform.position;
     }
 
     public override Quaternion getSpawnAngle(int index)
