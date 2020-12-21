@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c721c3e8c5dde894a9498ee4b78a3eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 5
   abilityName: Player Triple Punch
   attacks:
   - {fileID: 1182952816023492141, guid: 031d944daf29a1d409359c2fa6d2267f, type: 3}

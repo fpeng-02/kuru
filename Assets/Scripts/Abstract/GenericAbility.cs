@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class GenericAbility : MonoBehaviour
 {
+    [SerializeField] private float cooldown;
     [SerializeField] private string abilityName;
     // intervals[i] is the time before attacks[i] is fired
     [SerializeField] protected List<GameObject> attacks;
@@ -33,6 +34,7 @@ public abstract class GenericAbility : MonoBehaviour
     }
 
     public string getAbilityName() { return this.abilityName; }
+    public float getCooldown() { return this.cooldown; }
 
     public abstract GameObject getAttack(int index);
     public abstract Vector3 getSpawnVector(int index);

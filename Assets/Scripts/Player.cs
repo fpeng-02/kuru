@@ -24,6 +24,9 @@ public class Player : Entity
 
     public void Update()
     {
+        // update spell CDs
+        updateCooldowns();
+
         // get dash
         if (!dashing && Input.GetButtonDown("Dash")) {
             // TODO: dash animation?
