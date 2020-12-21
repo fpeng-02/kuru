@@ -19,7 +19,7 @@ public abstract class GenericAbility : MonoBehaviour
         Vector3 spawnVector = getSpawnVector(index);
         Quaternion spawnAngle = getSpawnAngle(index);
         GameObject child = (GameObject)Instantiate(attack, spawnVector, spawnAngle);
-        child.GetComponent<Damaging>().setOwner(this.transform.parent.gameObject.GetComponent<Entity>());
+        child.GetComponent<Projectile>().setOwner(this.transform.parent.gameObject.GetComponent<Entity>());
     }
 
     public IEnumerator cast()

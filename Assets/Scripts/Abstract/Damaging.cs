@@ -4,6 +4,5 @@ using UnityEngine;
 
 public abstract class Damaging : MonoBehaviour
 {
-    protected Entity owner;
-    public void setOwner(Entity owner) { this.owner = owner; }
+
 }

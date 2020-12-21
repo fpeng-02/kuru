@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeHit : Damaging
+public class MeleeHit : Projectile
 {
-    [SerializeField] private float lifespan;
-    [SerializeField] private float damage = 2;
-
     void OnTriggerStay2D(Collider2D col)
     {
         Entity tempEntity = col.GetComponent<Entity>();
@@ -20,8 +17,8 @@ public class MeleeHit : Damaging
     // Update is called once per frame
     void Update()
     {
-        lifespan -= Time.deltaTime;
-        if (lifespan < 0) {
+        lifeSpan -= Time.deltaTime;
+        if (lifeSpan < 0) {
             Destroy(this.gameObject);
         }
     }
