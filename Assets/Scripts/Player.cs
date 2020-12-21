@@ -37,6 +37,7 @@ public class Player : Entity
         }
 
         if (Input.GetButtonDown("BasicAttack")) { cast(0); }
+        if (Input.GetButtonDown("Special1")) { cast(1); }
 
         // if dashing, update dash timer
         if (dashing) {
