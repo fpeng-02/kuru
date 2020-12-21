@@ -2,18 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public abstract class Projectile : MonoBehaviour
 {
     [SerializeField] protected float lifeSpan;
     [SerializeField] protected float damage;
     [SerializeField] protected private float speed;
     [SerializeField] protected List<Effect> effectList;
+    protected Vector3 initialDir;
+    private Rigidbody2D rb2d;
     protected Entity owner;
+
     public void setOwner(Entity owner) { this.owner = owner; }
     public float getLifeSpan() { return this.lifeSpan; }
     public float getDamage() { return this.damage; }
     public float getSpeed() { return this.speed; }
     public void setDamage(float damage) { this.damage = damage; }
     public void setSpeed(float speed) { this.speed = speed; }
+
+    public abstract Vector3 getDirVector();
+    public void initializeDirVector(Vector3 initialDir) { Debug.Log(initialDir); this.initialDir = initialDir; }
+
+    void Start()
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+    }
+
+    void FixedUpdate()
+    {
+        rb2d.MovePosition(rb2d.transform.position + getDirVector().normalized * speed * Time.deltaTime);
+    }
 
 }

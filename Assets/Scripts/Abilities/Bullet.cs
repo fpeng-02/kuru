@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeHit : Projectile
+public class Bullet : Projectile
 {
     void OnTriggerStay2D(Collider2D col)
     {
@@ -21,14 +21,5 @@ public class MeleeHit : Projectile
         }
     }
 
-    public override Vector3 getDirVector() { return new Vector3(0, 0, 0); }
-
-    // Update is called once per frame
-    void Update()
-    {
-        lifeSpan -= Time.deltaTime;
-        if (lifeSpan < 0) {
-            Destroy(this.gameObject);
-        }
-    }
+    public override Vector3 getDirVector() { return this.initialDir; }
 }
