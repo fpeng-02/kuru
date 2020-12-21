@@ -67,11 +67,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b7aff085ede08419201b758563d934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 0
+  hitPoints: 100
   entityName: Player
-  abilityList:
-  - {fileID: 0}
-  abilitySpawners: []
+  abilities:
+  - {fileID: 8885194248236988788, guid: 2becc0e43b82cae469905a30bec9ca12, type: 3}
   speed: 2
   moveSpeed: 4
   dashSpeed: 10
