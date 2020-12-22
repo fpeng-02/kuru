@@ -43,10 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72eda2ba482fd77448f41708c1b5d5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.5
+  cooldown: 0.2
   abilityName: Melee
-  attacks:
-  - {fileID: 1182952816023492141, guid: 031d944daf29a1d409359c2fa6d2267f, type: 3}
-  intervals: []
-  spawnDistance: 1
-  size: 0
+  uptime: 0
+  meleeHitbox: {fileID: 1182952816023492141, guid: 031d944daf29a1d409359c2fa6d2267f,
+    type: 3}
+  spawnDistance: 0.5

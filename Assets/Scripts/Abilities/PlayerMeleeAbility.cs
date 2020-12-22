@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMeleeAbility : GenericAbility
+public class PlayerMeleeAbility : AbilitySequence
 {
-    public override GameObject getAttack(int index) { return this.attacks[0]; }
+    [SerializeField] private GameObject meleeHitbox;
+    [SerializeField] private float spawnDistance;
 
-    public override Vector3 getSpawnVector(int index)
+    public Vector3 getSpawnVector()
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 0.0F;
@@ -16,7 +17,7 @@ public class PlayerMeleeAbility : GenericAbility
         return this.transform.position + dirVector * spawnDistance;
     }
 
-    public override Quaternion getSpawnAngle(int index)
+    public Quaternion getSpawnAngle()
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 0.0F;
@@ -27,5 +28,14 @@ public class PlayerMeleeAbility : GenericAbility
         return Quaternion.Euler(0, 0, angle);
     }
 
-    public override float getInterval(int index) { return 0.0f; }
+    public override IEnumerator cast()
+    {
+        Vector3 spawnVector = getSpawnVector();
+        Quaternion spawnAngle = getSpawnAngle();
+        GameObject child = (GameObject)Instantiate(meleeHitbox, spawnVector, spawnAngle);
+        child.GetComponent<Projectile>().setOwner(this.transform.parent.gameObject.GetComponent<Entity>());
+        child.GetComponent<Projectile>().initializeDirVector(spawnVector - this.transform.position);
+        child.GetComponent<Projectile>().initializeQuaternion(spawnAngle);
+        yield return null;
+    }
 }

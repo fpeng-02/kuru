@@ -6,7 +6,7 @@ public abstract class Entity : MonoBehaviour
 {
     [SerializeField] private double hitPoints;
     [SerializeField] private string entityName;
-    [SerializeField] public List<GenericAbility> abilities;
+    [SerializeField] public List<AbilitySequence> abilities;
     private Dictionary<string, float> cooldownTimers = new Dictionary<string, float>();
     
 
@@ -22,9 +22,9 @@ public abstract class Entity : MonoBehaviour
     /// <param name="abilityName"></param>
     public void cast(string abilityName)
     {
-        foreach (GenericAbility ability in abilities) {
+        foreach (AbilitySequence ability in abilities) {
             if (ability.getAbilityName() == abilityName) {
-                GenericAbility toCast = (GenericAbility)Instantiate(ability, this.transform);
+                AbilitySequence toCast = (AbilitySequence)Instantiate(ability, this.transform);
                 StartCoroutine(toCast.cast());
             }
         }
@@ -38,7 +38,7 @@ public abstract class Entity : MonoBehaviour
     {
         // check CDs here 
         if (!cooldownTimers.ContainsKey(abilities[index].getAbilityName())) {
-            GenericAbility toCast = (GenericAbility)Instantiate(abilities[index], this.transform);
+            AbilitySequence toCast = (AbilitySequence)Instantiate(abilities[index], this.transform);
             StartCoroutine(toCast.cast());
             cooldownTimers.Add(abilities[index].getAbilityName(), toCast.getCooldown());
         }

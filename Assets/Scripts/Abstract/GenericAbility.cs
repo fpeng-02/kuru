@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* probably deprecated */
+
 public abstract class GenericAbility : MonoBehaviour
 {
     [SerializeField] private float cooldown;
