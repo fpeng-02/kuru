@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdec0eead7a1123408e86b93ce25d976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 0
   abilityName: Tutorial 5 Shotgun
   attacks:
   - {fileID: 2287018413972775875, guid: b330631b8a76b4b47a81aefe3252d542, type: 3}

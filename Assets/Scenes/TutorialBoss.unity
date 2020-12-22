@@ -130,6 +130,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6614510994198454443, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454443, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6614510994198454444, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
       propertyPath: m_Name
@@ -422,6 +432,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5075235420609445129, guid: cda607c0ee63586419385e40016d18f9,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075235420609445129, guid: cda607c0ee63586419385e40016d18f9,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5075235420609445134, guid: cda607c0ee63586419385e40016d18f9,
         type: 3}
       propertyPath: m_Name
@@ -482,5 +502,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8537159745300341905, guid: cda607c0ee63586419385e40016d18f9,
+        type: 3}
+      propertyPath: abilities.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537159745300341905, guid: cda607c0ee63586419385e40016d18f9,
+        type: 3}
+      propertyPath: abilities.Array.data[2]
+      value: 
+      objectReference: {fileID: 2605504861404303296, guid: e5782a7357e276d46874bb04ed08f16a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cda607c0ee63586419385e40016d18f9, type: 3}

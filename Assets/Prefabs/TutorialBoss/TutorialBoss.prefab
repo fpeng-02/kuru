@@ -16,6 +16,7 @@ MonoBehaviour:
   entityName: Tutorial Boss
   abilities:
   - {fileID: -1201824176075395374, guid: d02d4d64a15eb5b42b6ce6a7f88b2faf, type: 3}
+  - {fileID: 8933762234284197170, guid: ccc76673ced3f434190f8b9fb9df4acc, type: 3}
   - {fileID: 2605504861404303296, guid: e5782a7357e276d46874bb04ed08f16a, type: 3}
 --- !u!1001 &2136303872035691938
 PrefabInstance:

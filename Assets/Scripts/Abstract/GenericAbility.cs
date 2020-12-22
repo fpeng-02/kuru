@@ -22,8 +22,8 @@ public abstract class GenericAbility : MonoBehaviour
         Quaternion spawnAngle = getSpawnAngle(index);
         GameObject child = (GameObject)Instantiate(attack, spawnVector, spawnAngle);
         child.GetComponent<Projectile>().setOwner(this.transform.parent.gameObject.GetComponent<Entity>());
-        Debug.Log(spawnVector);
-        Debug.Log(this.transform.position);
+        //Debug.Log(spawnVector);
+        //Debug.Log(this.transform.position);
         child.GetComponent<Projectile>().initializeDirVector(spawnVector - this.transform.position);
         child.GetComponent<Projectile>().initializeQuaternion(spawnAngle);
     }

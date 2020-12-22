@@ -1,8 +1,8 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tutorial5Shotgun : GenericAbility
+public class Tutorial3Shot : GenericAbility
 {
     public override GameObject getAttack(int index)
     {
@@ -20,7 +20,7 @@ public class Tutorial5Shotgun : GenericAbility
         dirVector.z = 0;
         dirVector = dirVector.normalized;
         float angle = Mathf.Atan2(dirVector.y, dirVector.x) * Mathf.Rad2Deg;
-        return Quaternion.Euler(0, 0, (angle)+angles[index]);
+        return Quaternion.Euler(0, 0, (angle) + angles[index]);
     }
     public override float getInterval(int index)
     {
