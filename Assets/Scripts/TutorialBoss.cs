@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class TutorialBoss : Entity
 {
-    void Update()
-    {
-        updateCooldowns();
-    }
 
     private void castRandomAbility()
     {

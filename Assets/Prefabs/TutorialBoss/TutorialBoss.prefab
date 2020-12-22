@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 2609875782419983218}
   - component: {fileID: 7414029947741087072}
   - component: {fileID: 1453794089388110569}
+  - component: {fileID: 8241171697261343379}
+  - component: {fileID: 2535161879863022595}
+  - component: {fileID: 8575352296806705397}
   m_Layer: 0
   m_Name: TutorialBoss
   m_TagString: Untagged
@@ -146,7 +149,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 300
   entityName: Tutorial Boss
-  abilities:
-  - {fileID: 7859086103716146049, guid: 2fbab020ff603a643b88adbdf41cb826, type: 3}
-  - {fileID: 3312156701341356189, guid: 7f14fc34f46f96447806ad52c38c5294, type: 3}
-  - {fileID: 2164266364417679411, guid: 539b44993b7c1294f9c0048cc0d087d9, type: 3}
+--- !u!114 &8241171697261343379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609875782419983222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86a05ef7ccf7da42a214a1d3307d0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Tutorial Single Shot
+  uptime: 0
+  spawnAngleOffsets:
+  - 0
+  bullet: {fileID: 5370738161189394364, guid: b330631b8a76b4b47a81aefe3252d542, type: 3}
+--- !u!114 &2535161879863022595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609875782419983222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86a05ef7ccf7da42a214a1d3307d0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Tutorial 3 Shotgun
+  uptime: 0
+  spawnAngleOffsets:
+  - -30
+  - 0
+  - 30
+  bullet: {fileID: 5370738161189394364, guid: b330631b8a76b4b47a81aefe3252d542, type: 3}
+--- !u!114 &8575352296806705397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609875782419983222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86a05ef7ccf7da42a214a1d3307d0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Tutorial 5 Shotgun
+  uptime: 0
+  spawnAngleOffsets:
+  - -30
+  - -15
+  - 0
+  - 15
+  - 30
+  bullet: {fileID: 5370738161189394364, guid: b330631b8a76b4b47a81aefe3252d542, type: 3}

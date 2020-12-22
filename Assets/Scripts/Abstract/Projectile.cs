@@ -21,9 +21,9 @@ public abstract class Projectile : MonoBehaviour
     public void setSpeed(float speed) { this.speed = speed; }
 
     public abstract Vector3 getDirVector();
-    public void initializeDirVector(Vector3 initialDir) { Debug.Log(initialDir); this.initialDir = initialDir; }
+    public void initializeDirVector(Vector3 initialDir) { this.initialDir = initialDir; }
     public abstract Quaternion getQuaternion();
-    public void initializeQuaternion(Quaternion quat) { Debug.Log(quat); this.quat = quat; }
+    public void initializeQuaternion(Quaternion quat) { this.quat = quat; }
 
     void Start()
     {
@@ -32,13 +32,15 @@ public abstract class Projectile : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col)
     {
-        Entity tempEntity = col.GetComponent<Entity>();
+        Entity tempEntity = col.gameObject.GetComponent<Entity>();
         Projectile tempProjectile = col.GetComponent<Projectile>();
         // if you hit an entity that isn't yourself, apply effects
         if (tempEntity != null && tempEntity.getEntityName() != owner.getEntityName())
         {
+            // TODO: apply effects instead
             Debug.Log("hurt something");
             tempEntity.setHitPoints(tempEntity.getHitPoints() - damage);
+            Debug.Log(tempEntity.getHitPoints());
         }
 
         // if hit environment, destroy and short circuit if so no null pointer exception

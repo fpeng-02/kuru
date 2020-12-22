@@ -6,7 +6,7 @@ public abstract class Entity : MonoBehaviour
 {
     [SerializeField] private double hitPoints;
     [SerializeField] private string entityName;
-    [SerializeField] public List<AbilitySequence> abilities;
+    protected List<AbilitySequence> abilities = new List<AbilitySequence>();
     private Dictionary<string, float> cooldownTimers = new Dictionary<string, float>();
     
 
@@ -38,7 +38,7 @@ public abstract class Entity : MonoBehaviour
     {
         // check CDs here 
         if (!cooldownTimers.ContainsKey(abilities[index].getAbilityName())) {
-            AbilitySequence toCast = (AbilitySequence)Instantiate(abilities[index], this.transform);
+            AbilitySequence toCast = abilities[index];
             StartCoroutine(toCast.cast());
             cooldownTimers.Add(abilities[index].getAbilityName(), toCast.getCooldown());
         }
@@ -55,5 +55,29 @@ public abstract class Entity : MonoBehaviour
             tmpCooldownTimers.Add(timer.Key, timer.Value - Time.deltaTime);
         }
         cooldownTimers = tmpCooldownTimers;
+    }
+
+    protected virtual void checkDie()
+    {
+        if (hitPoints <= 0) {
+            // TODO: make this virtual so you can have unique death animations?
+            Destroy(this.gameObject);
+        }
+    }
+
+    protected void entityUpdate()
+    {
+        updateCooldowns();
+        checkDie();
+    }
+
+    void Awake()
+    {
+        GetComponents<AbilitySequence>(abilities);
+    }
+
+    public virtual void Update()
+    {
+        entityUpdate();
     }
 }

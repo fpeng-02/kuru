@@ -18,14 +18,12 @@ public class Player : Entity
 
     void Start()
     {
-        worldCam = GameObject.Find("Main Camera").GetComponent<Camera>(); // maybe wonky if we rename the main camera but proobably no need to
         dashing = false;
     }
 
-    public void Update()
+    public override void Update()
     {
-        // update spell CDs
-        updateCooldowns();
+        entityUpdate();
 
         // get dash
         if (!dashing && Input.GetButtonDown("Dash")) {
@@ -34,7 +32,7 @@ public class Player : Entity
             dashing = true;
             Vector3 tmpMousePos = Input.mousePosition;
             tmpMousePos.z = 0;
-            Vector3 tmpDir = worldCam.ScreenToWorldPoint(tmpMousePos) - this.transform.position;
+            Vector3 tmpDir = Camera.main.ScreenToWorldPoint(tmpMousePos) - this.transform.position;
             tmpDir.z = 0;
             dirVect = tmpDir.normalized;
         }

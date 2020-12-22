@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6614510994198454442}
   - component: {fileID: 6614510994198454440}
   - component: {fileID: 1806152850466926266}
+  - component: {fileID: 4748119791050219950}
+  - component: {fileID: 998612785880363931}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -155,3 +157,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &4748119791050219950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614510994198454444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72eda2ba482fd77448f41708c1b5d5a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: 
+  uptime: 0
+  meleeHitbox: {fileID: 0}
+  spawnDistance: 0
+--- !u!114 &998612785880363931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614510994198454444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66ccad83c6abd0498af85f65c8e899e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: 
+  uptime: 0
+  bullet: {fileID: 0}
