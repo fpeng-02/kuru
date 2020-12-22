@@ -15,6 +15,7 @@ MonoBehaviour:
   hitPoints: 300
   entityName: Tutorial Boss
   abilities:
+  - {fileID: -1201824176075395374, guid: d02d4d64a15eb5b42b6ce6a7f88b2faf, type: 3}
   - {fileID: 2605504861404303296, guid: e5782a7357e276d46874bb04ed08f16a, type: 3}
 --- !u!1001 &2136303872035691938
 PrefabInstance:

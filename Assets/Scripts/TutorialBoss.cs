@@ -9,6 +9,7 @@ public class TutorialBoss : Entity
         // update spell CDs
         updateCooldowns();
         cast(0);
+        cast(1);
     }
     public override void move()
     {

@@ -43,10 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36fdfc3115121e40a2eefcab4b0554e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.5
+  cooldown: 1
   abilityName: Tutorial Single Fire
   attacks:
   - {fileID: 2287018413972775875, guid: b330631b8a76b4b47a81aefe3252d542, type: 3}
   intervals: []
+  angles: []
   spawnDistance: 0
-  size: 5
+  size: 1

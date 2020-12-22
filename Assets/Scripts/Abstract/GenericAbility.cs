@@ -10,6 +10,8 @@ public abstract class GenericAbility : MonoBehaviour
     // intervals[i] is the time before attacks[i] is fired
     [SerializeField] protected List<GameObject> attacks;
     [SerializeField] protected List<float> intervals;
+    [SerializeField] protected List<float> angles;
+
     [SerializeField] protected float spawnDistance;
     [SerializeField] protected int size;
 
@@ -24,7 +26,6 @@ public abstract class GenericAbility : MonoBehaviour
         Debug.Log(this.transform.position);
         child.GetComponent<Projectile>().initializeDirVector(spawnVector - this.transform.position);
         child.GetComponent<Projectile>().initializeQuaternion(spawnAngle);
-
     }
 
     public IEnumerator cast()
