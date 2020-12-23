@@ -5,9 +5,8 @@ using UnityEngine;
 public abstract class Projectile : MonoBehaviour
 {
     [SerializeField] protected float lifeSpan;
-    [SerializeField] protected float damage;
     [SerializeField] protected private float speed;
-    [SerializeField] protected List<Effect> effectList;
+    protected List<Effect> effectList = new List<Effect>();
     protected Vector3 initialDir;
     protected Quaternion quat;
     protected Rigidbody2D rb2d;
@@ -15,9 +14,7 @@ public abstract class Projectile : MonoBehaviour
 
     public void setOwner(Entity owner) { this.owner = owner; }
     public float getLifeSpan() { return this.lifeSpan; }
-    public float getDamage() { return this.damage; }
     public float getSpeed() { return this.speed; }
-    public void setDamage(float damage) { this.damage = damage; }
     public void setSpeed(float speed) { this.speed = speed; }
 
     public abstract Vector3 getDirVector();
