@@ -4,10 +4,8 @@ using UnityEngine;
 
 public abstract class Effect : MonoBehaviour
 {
-    protected Entity owner;
-    public void setOwner(Entity owner) { this.owner = owner; }
-    [SerializeField] private readonly string effectName;
-    [SerializeField] private readonly string effectDescription;
+    [SerializeField] protected string effectName;
+    [SerializeField] protected string effectDescription;
 
     public string getEffectName() { return this.effectName; }
     public string getEffectDescription() { return this.effectDescription; }

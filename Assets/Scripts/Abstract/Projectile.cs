@@ -28,24 +28,25 @@ public abstract class Projectile : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        GetComponents<Effect>(effectList);
     }
 
     void OnTriggerStay2D(Collider2D col)
     {
-        Entity tempEntity = col.gameObject.GetComponent<Entity>();
-        Projectile tempProjectile = col.GetComponent<Projectile>();
+        Entity target = col.gameObject.GetComponent<Entity>();
+        Projectile hitProjectile = col.GetComponent<Projectile>();
+
         // if you hit an entity that isn't yourself, apply effects
-        if (tempEntity != null && tempEntity.getEntityName() != owner.getEntityName())
+        if (target != null && target.getEntityName() != owner.getEntityName())
         {
-            // TODO: apply effects instead
-            Debug.Log("hurt something");
-            tempEntity.setHitPoints(tempEntity.getHitPoints() - damage);
-            Debug.Log(tempEntity.getHitPoints());
+            foreach (Effect effect in effectList) {
+                effect.applyEffect(target);
+            }
         }
 
         // if hit environment, destroy and short circuit if so no null pointer exception
         // if hit entity that is not owner, destroy (this is after applying effects to said entity)
-        if (tempProjectile == null && (tempEntity == null || tempEntity.getEntityName() != owner.getEntityName()))
+        if (hitProjectile == null && (target == null || target.getEntityName() != owner.getEntityName()))
         {
             Destroy(this.gameObject);
         }
