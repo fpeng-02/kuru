@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1806152850466926266}
   - component: {fileID: 4748119791050219950}
   - component: {fileID: 998612785880363931}
+  - component: {fileID: 3827527434756603748}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -69,17 +70,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b7aff085ede08419201b758563d934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   hitPoints: 100
   entityName: Player
-  abilities:
-  - {fileID: 8885194248236988788, guid: 2becc0e43b82cae469905a30bec9ca12, type: 3}
-  - {fileID: 1087618680959621419, guid: 2d7d864c194f7ec44a7995ab2c36397f, type: 3}
-  speed: 2
-  moveSpeed: 4
-  dashSpeed: 10
-  dashTimeLength: 0.2
-  rb: {fileID: 6614510994198454443}
-  worldCam: {fileID: 0}
+  baseMoveSpeed: 5
 --- !u!212 &6614510994198454440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -190,3 +184,20 @@ MonoBehaviour:
   abilityName: 
   uptime: 0
   bullet: {fileID: 0}
+--- !u!114 &3827527434756603748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614510994198454444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5887c97a3ebf5c49be398c98bb097fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Player Dash
+  uptime: 0
+  dashSpeedBonus: 5
+  dashTime: 0.2

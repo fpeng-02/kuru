@@ -31,23 +31,29 @@ public abstract class Projectile : MonoBehaviour
         GetComponents<Effect>(effectList);
     }
 
-    void OnTriggerStay2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         Entity target = col.gameObject.GetComponent<Entity>();
-        Projectile hitProjectile = col.GetComponent<Projectile>();
+        Projectile testProjectile = col.GetComponent<Projectile>();
+        bool hitSelf = target != null && target.getEntityName() == owner.getEntityName();
+        bool hitProjectile = testProjectile != null;
+        bool hitOtherEntity = target != null && target.getEntityName() != owner.getEntityName();
 
-        // if you hit an entity that isn't yourself, apply effects
-        if (target != null && target.getEntityName() != owner.getEntityName())
-        {
+        // if you hit an entity that isn't yourself, apply effects and destroy
+        // if the target is invuln, don't; just pass through it
+        if (hitOtherEntity) {
+            if (target.getInvulnerable()) {
+                return;
+            }
             foreach (Effect effect in effectList) {
                 effect.applyEffect(target);
             }
+            Destroy(this.gameObject);
         }
 
-        // if hit environment, destroy and short circuit if so no null pointer exception
-        // if hit entity that is not owner, destroy (this is after applying effects to said entity)
-        if (hitProjectile == null && (target == null || target.getEntityName() != owner.getEntityName()))
-        {
+        // if didn't hit projectile or entity, it hit the environment--destroy
+        // projectile hitting other projectiles would be implemented here maybe?
+        if (!hitProjectile && (target == null || target.getEntityName() != owner.getEntityName())) {
             Destroy(this.gameObject);
         }
     }
