@@ -8,7 +8,13 @@ public class TutorialBoss : Entity
     [SerializeField] private List<float> phaseThresholds;
     private int currentPhase;
     private bool revived = false;
+    private Vector3 dirVector = new Vector3(0, 0, 0);
+    private Rigidbody2D rb2d;
 
+    public void testLol()
+    {
+        Debug.Log(getEntityName());
+    }
     private void nextPhase()
     {
         phases[currentPhase].StopAllCoroutines();
@@ -41,5 +47,10 @@ public class TutorialBoss : Entity
         if (hitPoints < phaseThresholds[currentPhase]) {
             nextPhase();
         }
+    }
+
+    void FixedUpdate()
+    {
+        rb2d.MovePosition(rb2d.transform.position + dirVector * speed * Time.deltaTime);
     }
 }

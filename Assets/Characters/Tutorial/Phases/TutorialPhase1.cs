@@ -13,6 +13,10 @@ public class TutorialPhase1 : Phase
     public override IEnumerator delayAction()
     {
         // choose movement
+        //TutorialBoss boss = owner.gameObject.GetComponent<TutorialBoss>();
+        TutorialBoss boss = (TutorialBoss)owner;
+        boss.testLol(); 
+
         yield return new WaitForSeconds(1.0f);
         yield return attackAction();
     }
