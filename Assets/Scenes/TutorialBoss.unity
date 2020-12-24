@@ -688,6 +688,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6614510994198454444, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
       propertyPath: m_RootOrder
@@ -696,12 +701,12 @@ PrefabInstance:
     - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0214716
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47132015
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6614510994198454445, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
@@ -752,10 +757,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4752379583967887420, guid: cda607c0ee63586419385e40016d18f9,
+        type: 3}
+      propertyPath: beamWidth
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4752379583967887420, guid: cda607c0ee63586419385e40016d18f9,
+        type: 3}
+      propertyPath: chargeTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609875782419983217, guid: cda607c0ee63586419385e40016d18f9,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2609875782419983222, guid: cda607c0ee63586419385e40016d18f9,
         type: 3}
       propertyPath: m_Name
       value: TutorialBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609875782419983222, guid: cda607c0ee63586419385e40016d18f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2609875782419983222, guid: cda607c0ee63586419385e40016d18f9,
         type: 3}
@@ -770,12 +795,12 @@ PrefabInstance:
     - target: {fileID: 2609875782419983223, guid: cda607c0ee63586419385e40016d18f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7199998
+      value: -4.97
       objectReference: {fileID: 0}
     - target: {fileID: 2609875782419983223, guid: cda607c0ee63586419385e40016d18f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.0900002
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 2609875782419983223, guid: cda607c0ee63586419385e40016d18f9,
         type: 3}

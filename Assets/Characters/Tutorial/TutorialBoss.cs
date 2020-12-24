@@ -10,8 +10,8 @@ public class TutorialBoss : Entity
     private void castRandomAbility()
     {
         int toCast = Random.Range(0, this.abilities.Count);
-        Debug.Log("cast ability " + toCast);
-        cast(toCast);
+        //Debug.Log("cast ability " + toCast);
+        cast(4);
     }
 
     void Start()

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2535161879863022595}
   - component: {fileID: 8575352296806705397}
   - component: {fileID: 1208774133527792988}
+  - component: {fileID: -4752379583967887420}
   m_Layer: 0
   m_Name: TutorialBoss
   m_TagString: Untagged
@@ -234,3 +235,21 @@ MonoBehaviour:
   xUpperBound: 10
   yLowerBound: -5
   yUpperBound: 5
+--- !u!114 &-4752379583967887420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609875782419983222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4427f3d65716ca47b79a7d29881674d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Tutorial Laser Attack
+  uptime: 2.8
+  effectList: []
+  chargeTime: 0
+  damageInterval: 0.2

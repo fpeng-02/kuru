@@ -25,6 +25,7 @@ public class TutorialShotgun : AbilitySequence
 
     public override IEnumerator cast()
     {
+
         for (int i = 0; i < spawnAngleOffsets.Count; i++) {
             Vector3 spawnVector = getSpawnVector();
             Quaternion spawnAngle = getSpawnAngle(i);
