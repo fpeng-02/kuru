@@ -4,18 +4,42 @@ using UnityEngine;
 
 public class TutorialBoss : Entity
 {
+    private List<Phase> phases = new List<Phase>();
+    [SerializeField] private List<float> phaseThresholds;
+    private int currentPhase;
+    private bool revived = false;
 
-    private StateMachine stateMachine = new StateMachine();
-
-    private void castRandomAbility()
+    private void nextPhase()
     {
-        int toCast = Random.Range(0, this.abilities.Count);
-        //Debug.Log("cast ability " + toCast);
-        cast(4);
+        phases[currentPhase].StopAllCoroutines();
+        currentPhase++;
+        phases[currentPhase].init(this);
     }
 
     void Start()
     {
-        InvokeRepeating("castRandomAbility", 0.0f, 3.0f);
+        GetComponents<Phase>(phases);
+        currentPhase = 0;
+        phases[currentPhase].init(this);
+    }
+    
+    protected override void checkDie()
+    {
+        if (hitPoints < 0) {
+            if (!revived) {
+                nextPhase();
+                revived = true;
+            } else {
+                Destroy(this.gameObject);
+            }
+        
+        }
+    }
+
+    public override void customUpdate()
+    {
+        if (hitPoints < phaseThresholds[currentPhase]) {
+            nextPhase();
+        }
     }
 }

@@ -38,7 +38,6 @@ public class TutorialLaserAttack : AbilitySequence
         lr.SetPosition(0, this.transform.position);
         lr.SetPosition(1, initHit.point);
 
-        Debug.Log("dont open ur door");
         yield return new WaitForSeconds(chargeTime);
         lr.startWidth = beamWidth;
         lr.endWidth = beamWidth;

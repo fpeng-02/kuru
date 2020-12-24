@@ -23,10 +23,8 @@ public class Player : Entity
     public void setDirVect(Vector3 dirVect) { this.dirVect = dirVect; }
 
 
-    public override void Update()
+    public override void customUpdate()
     {
-        entityUpdate();
-
         if (!dashing && Input.GetButtonDown("Dash")) {
             cast("Player Dash");
         }

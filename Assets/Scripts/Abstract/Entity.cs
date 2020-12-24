@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour
 {
     [SerializeField] protected float speed;
-    [SerializeField] private float hitPoints;
+    [SerializeField] protected float hitPoints;
     [SerializeField] private string entityName;
     private bool invulnerable = false;
     protected List<AbilitySequence> abilities = new List<AbilitySequence>();
@@ -70,10 +70,15 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    protected void entityUpdate()
+    private void entityUpdate()
     {
         updateCooldowns();
         checkDie();
+    }
+
+    public virtual void customUpdate()
+    {
+
     }
 
     void Awake()
@@ -81,8 +86,9 @@ public abstract class Entity : MonoBehaviour
         GetComponents<AbilitySequence>(abilities);
     }
 
-    public virtual void Update()
+    public void Update()
     {
         entityUpdate();
+        customUpdate();
     }
 }
