@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8241171697261343379}
   - component: {fileID: 2535161879863022595}
   - component: {fileID: 8575352296806705397}
+  - component: {fileID: 1208774133527792988}
   m_Layer: 0
   m_Name: TutorialBoss
   m_TagString: Untagged
@@ -147,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187477578d7bebc4f95546221d39f97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   hitPoints: 300
   entityName: Tutorial Boss
 --- !u!114 &8241171697261343379
@@ -209,3 +211,26 @@ MonoBehaviour:
   - 15
   - 30
   bullet: {fileID: 5370738161189394364, guid: b330631b8a76b4b47a81aefe3252d542, type: 3}
+--- !u!114 &1208774133527792988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609875782419983222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cbd73e03829a14eb8ef39f930f619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Tutorial Delayed Strike
+  uptime: 0
+  delayedStrike: {fileID: 6329980198389091925, guid: cf38570f23cc83745bd4b6283c6c301a,
+    type: 3}
+  interval: 0.2
+  strikes: 5
+  xLowerBound: -10
+  xUpperBound: 10
+  yLowerBound: -5
+  yUpperBound: 5

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TutorialBoss : Entity
 {
-    
 
+    private StateMachine stateMachine = new StateMachine();
 
     private void castRandomAbility()
     {
