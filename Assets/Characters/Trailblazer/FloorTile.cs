@@ -49,6 +49,7 @@ public class FloorTile : MonoBehaviour
         this.setFloor();
         yield return null;
     }
+
     public void setHighlight()
     {
         sR.sprite = highlightSprite;
@@ -57,9 +58,7 @@ public class FloorTile : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-
-        if (state == FloorState.Floor || state == FloorState.Highlight)
-        {
+        if (state == FloorState.Floor || state == FloorState.Highlight) {
             if (col.gameObject.layer == LayerMask.NameToLayer("Player")) {
                 StartCoroutine("setWarning");
             }
