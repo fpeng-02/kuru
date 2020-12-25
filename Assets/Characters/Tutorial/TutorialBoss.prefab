@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 5471474106460531212}
   - component: {fileID: 3243519336422184413}
   - component: {fileID: 4778154815346526644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TutorialBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,12 +155,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  hitPoints: 400
+  hitPoints: 800
   entityName: 
   phaseThresholds:
-  - 300
+  - 600
+  - 400
   - 200
-  - 100
   - 0
 --- !u!114 &8241171697261343379
 MonoBehaviour:

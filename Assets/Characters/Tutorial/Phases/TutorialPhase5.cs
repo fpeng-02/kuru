@@ -43,6 +43,7 @@ public class TutorialPhase5 : Phase
         owner.cast("Tutorial Laser Attack");
         owner.cast("Tutorial 5 Shotgun");
         yield return new WaitForSeconds(2.2f);
+        owner.cast("Tutorial 5 Shotgun");
         yield return delayAction();
     }
 }

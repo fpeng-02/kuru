@@ -59,7 +59,7 @@ public class TutorialLaserAttack : AbilitySequence
         ContactFilter2D cf = new ContactFilter2D();
         cf.useLayerMask = true;
         //Filter raycast to only hit ents (rip trees)
-        cf.layerMask = LayerMask.GetMask("Entity");
+        cf.layerMask = LayerMask.GetMask("Entity", "Player");
 
         while (tempUptime >= 0)
         {
