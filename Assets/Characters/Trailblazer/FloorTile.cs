@@ -11,20 +11,17 @@ public class FloorTile : MonoBehaviour
 
     [SerializeField] private float warningTime;
     [SerializeField] private float lavaTime;
-    private floorState state;
+    private FloorState state;
 
     private SpriteRenderer sR;
+
+    public FloorState getState() { return this.state; }
 
     // Start is called before the first frame update
     void Start()
     {
         sR = this.GetComponent<SpriteRenderer>();
         setFloor();
-    }
-    private enum floorState
-    {
-        floor, warning, lava, highlight
-
     }
 
     public void setWarningTime(float warningTime) { this.warningTime = warningTime; }
@@ -33,19 +30,21 @@ public class FloorTile : MonoBehaviour
     public void setFloor()
     {
         sR.sprite = floorSprite;
-        state = floorState.floor;
+        state = FloorState.Floor;
     }
+
     public IEnumerator setWarning()
     {
         sR.sprite = warningSprite;
-        state = floorState.warning;
+        state = FloorState.Warning;
         yield return new WaitForSeconds(warningTime);
         yield return setLava();
     }
+
     public IEnumerator setLava()
     {
         sR.sprite = lavaSprite;
-        state = floorState.lava;
+        state = FloorState.Lava;
         yield return new WaitForSeconds(lavaTime);
         this.setFloor();
         yield return null;
@@ -53,14 +52,13 @@ public class FloorTile : MonoBehaviour
     public void setHighlight()
     {
         sR.sprite = highlightSprite;
-        state = floorState.highlight;
+        state = FloorState.Highlight;
     }
-    // Update is called once per frame
 
     private void OnTriggerStay2D(Collider2D col)
     {
 
-        if (state == floorState.floor || state == floorState.highlight)
+        if (state == FloorState.Floor || state == FloorState.Highlight)
         {
             if (col.gameObject.layer == LayerMask.NameToLayer("Player")) {
                 StartCoroutine("setWarning");
