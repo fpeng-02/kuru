@@ -17,7 +17,7 @@ public class TutorialPhase5 : Phase
         owner.setSpeed(0);
         owner.setInvulnerable(true);
         owner.gameObject.transform.position = new Vector3(0, 0, 0);
-        Debug.Log("NOO!!! THIS CANNOT BE!!!!!!!");
+        Debug.Log("REVIVING");
         yield return new WaitForSeconds(3.0f);
         owner.setInvulnerable(false);
         // Animations would go here
