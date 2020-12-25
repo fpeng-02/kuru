@@ -57,11 +57,14 @@ public class FloorTile : MonoBehaviour
     }
     // Update is called once per frame
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D col)
     {
+
         if (state == floorState.floor || state == floorState.highlight)
         {
-            StartCoroutine("setWarning");
+            if (col.gameObject.layer == LayerMask.NameToLayer("Player")) {
+                StartCoroutine("setWarning");
+            }
         }
     }
     

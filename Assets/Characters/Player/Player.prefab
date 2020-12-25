@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  abilityName: 
+  abilityName: Player Melee Ability
   uptime: 0
   meleeHitbox: {fileID: 1182952816023492141, guid: 031d944daf29a1d409359c2fa6d2267f,
     type: 3}
@@ -182,9 +182,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  abilityName: 
+  abilityName: Player SIngle Shot
   uptime: 0
-  bullet: {fileID: 0}
+  bullet: {fileID: 2508099184500051154, guid: 12a9b0bc07dedb148bca20c90a6a1794, type: 3}
 --- !u!114 &3827527434756603748
 MonoBehaviour:
   m_ObjectHideFlags: 0

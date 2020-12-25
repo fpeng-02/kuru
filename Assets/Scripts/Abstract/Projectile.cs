@@ -30,8 +30,11 @@ public abstract class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        //
+
         Entity target = col.gameObject.GetComponent<Entity>();
         Projectile testProjectile = col.GetComponent<Projectile>();
+        bool hitEnvironment = col.gameObject.layer == LayerMask.NameToLayer("Environment");
         bool hitSelf = target != null && target.getEntityName() == owner.getEntityName();
         bool hitProjectile = testProjectile != null;
         bool hitOtherEntity = target != null && target.getEntityName() != owner.getEntityName();
@@ -50,7 +53,7 @@ public abstract class Projectile : MonoBehaviour
 
         // if didn't hit projectile or entity, it hit the environment--destroy
         // projectile hitting other projectiles would be implemented here maybe?
-        if (!hitProjectile && (target == null || target.getEntityName() != owner.getEntityName())) {
+        if (hitEnvironment) {
             Destroy(this.gameObject);
         }
     }
