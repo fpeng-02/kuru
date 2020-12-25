@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class TutorialPhase5 : Phase
 {
+    [SerializeField] private float dashSpeed;
     [SerializeField] private float reviveTo;
+
 
     public override IEnumerator beginPhase()
     {
+        // turn laser off if it was active in the last phase (really janky bad solution)
+        TutorialLaserAttack laserAttack = owner.GetComponent("TutorialLaserAttack") as TutorialLaserAttack;
+        laserAttack.turnOff();
         owner.setHitPoints(reviveTo);
+        owner.setSpeed(0);
         owner.setInvulnerable(true);
         owner.gameObject.transform.position = new Vector3(0, 0, 0);
-        Debug.Log("EPIC SMOKE PARTICLES! FROM THE ASHES I RISE!!!!!");
+        Debug.Log("NOO!!! THIS CANNOT BE!!!!!!!");
         yield return new WaitForSeconds(3.0f);
         owner.setInvulnerable(false);
         // Animations would go here
@@ -20,8 +26,14 @@ public class TutorialPhase5 : Phase
 
     public override IEnumerator delayAction()
     {
-        // choose movement
-        yield return new WaitForSeconds(0.1f);
+        // small dash, then pause
+        Quaternion randDir = Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f));
+        TutorialBoss boss = (TutorialBoss)owner;
+        boss.setDirVector(randDir * Vector3.right);
+        boss.setSpeed(dashSpeed);
+        yield return new WaitForSeconds(0.2f);
+        boss.setSpeed(0);
+        yield return new WaitForSeconds(0.5f);
         yield return attackAction();
     }
 

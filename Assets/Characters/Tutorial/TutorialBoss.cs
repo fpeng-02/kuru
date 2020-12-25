@@ -11,10 +11,8 @@ public class TutorialBoss : Entity
     private Vector3 dirVector = new Vector3(0, 0, 0);
     private Rigidbody2D rb2d;
 
-    public void testLol()
-    {
-        Debug.Log(getEntityName());
-    }
+    public void setDirVector(Vector3 dirVector) { this.dirVector = dirVector; }
+
     private void nextPhase()
     {
         phases[currentPhase].StopAllCoroutines();
@@ -25,6 +23,7 @@ public class TutorialBoss : Entity
     void Start()
     {
         GetComponents<Phase>(phases);
+        rb2d = GetComponent<Rigidbody2D>();
         currentPhase = 0;
         phases[currentPhase].init(this);
     }
@@ -38,7 +37,6 @@ public class TutorialBoss : Entity
             } else {
                 Destroy(this.gameObject);
             }
-        
         }
     }
 

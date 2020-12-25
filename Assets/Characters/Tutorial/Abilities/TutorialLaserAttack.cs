@@ -8,6 +8,15 @@ public class TutorialLaserAttack : AbilitySequence
     [SerializeField] private float chargeTime;
     [SerializeField] private float damageInterval;
     [SerializeField] private float beamWidth;
+    private LineRenderer lr;
+
+
+    // set "lr" in start
+    void Start()
+    {
+        lr = this.gameObject.AddComponent<LineRenderer>() as LineRenderer;
+        lr.enabled = false;
+    }
 
     public Vector3 getSpawnVector()
     {
@@ -27,7 +36,8 @@ public class TutorialLaserAttack : AbilitySequence
     {
         //Create the line to initial hit spot.
         Vector3 playerPos = getPlayerVector();
-        LineRenderer lr = this.gameObject.AddComponent<LineRenderer>() as LineRenderer;
+        lr.enabled = true;
+        //lr = this.gameObject.AddComponent<LineRenderer>() as LineRenderer;
 
         RaycastHit2D initHit = Physics2D.Raycast(this.transform.position, playerPos, 50.0f, LayerMask.GetMask("Environment"),-100,100);
 
@@ -54,7 +64,7 @@ public class TutorialLaserAttack : AbilitySequence
         while (tempUptime >= 0)
         {
             yield return new WaitForSeconds(damageInterval);
-            Physics2D.CircleCast(this.transform.position, beamWidth/2,playerPos, cf, rayResults, Vector3.Magnitude(laserDistance));
+            Physics2D.CircleCast(this.transform.position, beamWidth/2, playerPos, cf, rayResults, Vector3.Magnitude(laserDistance));
             foreach (RaycastHit2D curHit in rayResults)
             {
                 Entity curEnt = curHit.transform.gameObject.GetComponent<Entity>();
@@ -66,10 +76,22 @@ public class TutorialLaserAttack : AbilitySequence
             tempUptime -= damageInterval;
             rayResults.Clear();
         }
-        
-        GameObject.Destroy(this.gameObject.GetComponent<LineRenderer>());
-        Debug.Log(this.GetComponent<LineRenderer>());
+
+        lr.enabled = false;
+        //GameObject.Destroy(this.gameObject.GetComponent<LineRenderer>());
+        //Debug.Log(this.GetComponent<LineRenderer>());
         yield return null;
-        
+    }
+
+    public void turnOff()
+    {
+        lr.enabled = false;
+    }
+
+    void Update()
+    {
+        if (lr.enabled) {
+            lr.SetPosition(0, this.transform.position);
+        }
     }
 }

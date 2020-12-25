@@ -13,10 +13,9 @@ public class TutorialPhase1 : Phase
     public override IEnumerator delayAction()
     {
         // choose movement
-        //TutorialBoss boss = owner.gameObject.GetComponent<TutorialBoss>();
+        Quaternion randDir = Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f));
         TutorialBoss boss = (TutorialBoss)owner;
-        boss.testLol(); 
-
+        boss.setDirVector(randDir * Vector3.right);
         yield return new WaitForSeconds(1.0f);
         yield return attackAction();
     }
