@@ -27,21 +27,10 @@ public class FloorTile : MonoBehaviour
     public void setWarningTime(float warningTime) { this.warningTime = warningTime; }
     public void setLavaTime(float lavaTime) { this.lavaTime = lavaTime; }
 
-    public void setFloor()
-    {
-        sR.sprite = floorSprite;
-        state = FloorState.Floor;
-    }
-
-    public void setWarning()
-    {
-        StartCoroutine("warning");
-    }
-
-    public void setLava()
-    {
-        StartCoroutine("lava");
-    }
+    public void setFloor() { sR.sprite = floorSprite; state = FloorState.Floor; }
+    public void setWarning() { StartCoroutine("warning"); }
+    public void setLava() { StartCoroutine("lava"); }
+    public void setExtendedLava() { StartCoroutine("extendedLava"); }
 
     public IEnumerator warning()
     {
@@ -56,6 +45,15 @@ public class FloorTile : MonoBehaviour
         sR.sprite = lavaSprite;
         state = FloorState.Lava;
         yield return new WaitForSeconds(lavaTime);
+        this.setFloor();
+        yield return null;
+    }
+
+    public IEnumerator extendedLava()
+    {
+        sR.sprite = lavaSprite;
+        state = FloorState.Lava;
+        yield return new WaitForSeconds(lavaTime + warningTime);
         this.setFloor();
         yield return null;
     }

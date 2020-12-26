@@ -20,8 +20,13 @@ public class TBPoundPlayerRegion : AbilitySequence
         Physics2D.OverlapCircle(playerPos, radius, cf, toWarn);
         foreach (Collider2D col in toWarn) {
             FloorTile tile = col.gameObject.GetComponent<FloorTile>();
-            if (tile.getState() == FloorState.Floor) {
+            FloorState tileState = tile.getState();
+            tile.StopAllCoroutines();
+            if (tileState == FloorState.Floor || tileState == FloorState.Warning) {
                 tile.setWarning();
+            }
+            else {
+                tile.setExtendedLava();
             }
         }
         yield break;
