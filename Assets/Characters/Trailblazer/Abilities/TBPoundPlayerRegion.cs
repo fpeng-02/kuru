@@ -21,7 +21,7 @@ public class TBPoundPlayerRegion : AbilitySequence
         foreach (Collider2D col in toWarn) {
             FloorTile tile = col.gameObject.GetComponent<FloorTile>();
             if (tile.getState() == FloorState.Floor) {
-                StartCoroutine(tile.setWarning());
+                tile.setWarning();
             }
         }
         yield break;

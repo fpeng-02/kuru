@@ -33,15 +33,25 @@ public class FloorTile : MonoBehaviour
         state = FloorState.Floor;
     }
 
-    public IEnumerator setWarning()
+    public void setWarning()
+    {
+        StartCoroutine("warning");
+    }
+
+    public void setLava()
+    {
+        StartCoroutine("lava");
+    }
+
+    public IEnumerator warning()
     {
         sR.sprite = warningSprite;
         state = FloorState.Warning;
         yield return new WaitForSeconds(warningTime);
-        yield return setLava();
+        yield return lava();
     }
 
-    public IEnumerator setLava()
+    public IEnumerator lava()
     {
         sR.sprite = lavaSprite;
         state = FloorState.Lava;
