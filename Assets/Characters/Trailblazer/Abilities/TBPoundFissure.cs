@@ -12,7 +12,6 @@ public class TBPoundFissure : AbilitySequence
     {
         toWarn = Physics2D.CircleCastAll(this.transform.position, fissureWidth / 2, dir, Mathf.Infinity, LayerMask.GetMask("FloorTile"));
         foreach (RaycastHit2D rch in toWarn) {
-            Debug.Log(rch.transform.gameObject);
             FloorTile tile = rch.transform.gameObject.GetComponent<FloorTile>();
             FloorState tileState = tile.getState();
             tile.StopAllCoroutines();

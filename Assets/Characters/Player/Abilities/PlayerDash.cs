@@ -9,7 +9,6 @@ public class PlayerDash : AbilitySequence
 
     public override IEnumerator cast()
     {
-        Debug.Log("Dashing");
         // TODO: dash animation?
         Player player = (Player)caster;
         player.setDashing(true);

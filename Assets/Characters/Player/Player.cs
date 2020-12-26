@@ -11,25 +11,43 @@ public class Player : Entity
     private float v;
     private Vector3 dirVect;
 
+    [SerializeField] private float lavaTickInterval;
+    [SerializeField] private float lavaTickDamage;
+
     void Start()
     {
         dashing = false;
         rb = GetComponent<Rigidbody2D>();
         setSpeed(baseMoveSpeed);
+        StartCoroutine("tickLavaDamage");
     }
 
     public float getBaseMoveSpeed() { return this.baseMoveSpeed; }
     public void setDashing(bool dashing) { this.dashing = dashing; }
     public void setDirVect(Vector3 dirVect) { this.dirVect = dirVect; }
 
+    public IEnumerator tickLavaDamage()
+    {
+        bool standingOnLava = false;
+        foreach (Collider2D col in Physics2D.OverlapBoxAll(this.transform.position, new Vector2(0.5f, 0.5f), 0, LayerMask.GetMask("FloorTile"))) {
+            if (col.gameObject.GetComponent<FloorTile>().getState() == FloorState.Lava) {
+                standingOnLava = true;
+            }
+        }
+        if (!getInvulnerable() && standingOnLava) {
+            hitPoints -= lavaTickDamage;
+        }
+        yield return new WaitForSeconds(lavaTickInterval);
+        StartCoroutine("tickLavaDamage");
+    }
 
     public override void customUpdate()
     {
         if (!dashing && Input.GetButtonDown("Dash")) {
             cast("Player Dash");
         }
+
         if (Input.GetButtonDown("BasicAttack")) { cast(0); }
-        if (Input.GetButtonDown("Special1")) { cast(1); }
 
         // basic horiz/vert movement
         if (!dashing) {
