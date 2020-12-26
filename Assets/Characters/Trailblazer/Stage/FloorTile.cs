@@ -29,8 +29,10 @@ public class FloorTile : MonoBehaviour
 
     public void setFloor() { sR.sprite = floorSprite; state = FloorState.Floor; }
     public void setWarning() { StartCoroutine("warning"); }
+    public void setWarningToPermanentLava() { StartCoroutine("warningToPermanentLava"); }
     public void setLava() { StartCoroutine("lava"); }
     public void setExtendedLava() { StartCoroutine("extendedLava"); }
+    public void setPermanentLava() { sR.sprite = lavaSprite; state = FloorState.Lava; }
 
     public IEnumerator warning()
     {
@@ -38,6 +40,14 @@ public class FloorTile : MonoBehaviour
         state = FloorState.Warning;
         yield return new WaitForSeconds(warningTime);
         yield return lava();
+    }
+
+    public IEnumerator warningToPermanentLava()
+    {
+        sR.sprite = warningSprite;
+        state = FloorState.Warning;
+        yield return new WaitForSeconds(warningTime);
+        setPermanentLava();
     }
 
     public IEnumerator lava()

@@ -15,17 +15,13 @@ public class TBPhase1 : Phase
     public override IEnumerator beginPhase()
     {
         // animations maybe
-        yield return delayAction();
+        yield return phaseLoop();
     }
 
-    public override IEnumerator delayAction()
+    public override IEnumerator phaseLoop()
     {
         yield return new WaitForSeconds(interval);
-        yield return attackAction();
-    }
 
-    public override IEnumerator attackAction()
-    {
         // choose a random position to teleport to, but make sure it's far enough away from the player
         Vector3 playerPos = GameObject.Find("Player").transform.position;
         Vector3 randomPos = playerPos;
@@ -36,6 +32,5 @@ public class TBPhase1 : Phase
         yield return new WaitForSeconds(waitAfterTeleport);
         // then shoot a shotgun
         owner.cast("Shotgun");
-        yield return delayAction();
     }
 }

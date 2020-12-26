@@ -21,29 +21,27 @@ public class TutorialPhase5 : Phase
         yield return new WaitForSeconds(3.0f);
         owner.setInvulnerable(false);
         // Animations would go here
-        yield return delayAction();
+        yield return phaseLoop();
     }
 
-    public override IEnumerator delayAction()
+    public override IEnumerator phaseLoop()
     {
-        // small dash, then pause
-        Quaternion randDir = Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f));
-        TutorialBoss boss = (TutorialBoss)owner;
-        boss.setDirVector(randDir * Vector3.right);
-        boss.setSpeed(dashSpeed);
-        yield return new WaitForSeconds(0.2f);
-        boss.setSpeed(0);
-        yield return new WaitForSeconds(0.5f);
-        yield return attackAction();
-    }
+        while (true) {
+            // small dash, then pause
+            Quaternion randDir = Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f));
+            TutorialBoss boss = (TutorialBoss)owner;
+            boss.setDirVector(randDir * Vector3.right);
+            boss.setSpeed(dashSpeed);
+            yield return new WaitForSeconds(0.2f);
+            boss.setSpeed(0);
+            yield return new WaitForSeconds(0.5f);
 
-    public override IEnumerator attackAction()
-    {
-        owner.cast("Tutorial Delayed Strike");
-        owner.cast("Tutorial Laser Attack");
-        owner.cast("Tutorial 5 Shotgun");
-        yield return new WaitForSeconds(2.2f);
-        owner.cast("Tutorial 5 Shotgun");
-        yield return delayAction();
+            // attack
+            owner.cast("Tutorial Delayed Strike");
+            owner.cast("Tutorial Laser Attack");
+            owner.cast("Tutorial 5 Shotgun");
+            yield return new WaitForSeconds(2.2f);
+            owner.cast("Tutorial 5 Shotgun");
+        }
     }
 }

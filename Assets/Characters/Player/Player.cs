@@ -28,17 +28,18 @@ public class Player : Entity
 
     public IEnumerator tickLavaDamage()
     {
-        bool standingOnLava = false;
-        foreach (Collider2D col in Physics2D.OverlapBoxAll(this.transform.position, new Vector2(0.5f, 0.5f), 0, LayerMask.GetMask("FloorTile"))) {
-            if (col.gameObject.GetComponent<FloorTile>().getState() == FloorState.Lava) {
-                standingOnLava = true;
+        while (this.gameObject.activeSelf) {
+            bool standingOnLava = false;
+            foreach (Collider2D col in Physics2D.OverlapBoxAll(this.transform.position, new Vector2(0.5f, 0.5f), 0, LayerMask.GetMask("FloorTile"))) {
+                if (col.gameObject.GetComponent<FloorTile>().getState() == FloorState.Lava) {
+                    standingOnLava = true;
+                }
             }
+            if (!getInvulnerable() && standingOnLava) {
+                hitPoints -= lavaTickDamage;
+            }
+            yield return new WaitForSeconds(lavaTickInterval);
         }
-        if (!getInvulnerable() && standingOnLava) {
-            hitPoints -= lavaTickDamage;
-        }
-        yield return new WaitForSeconds(lavaTickInterval);
-        StartCoroutine("tickLavaDamage");
     }
 
     public override void customUpdate()

@@ -10,9 +10,9 @@ public abstract class Phase : MonoBehaviour
     public void init(Entity owner) 
     {
         this.owner = owner;    
-        StartCoroutine("beginPhase"); 
+        StartCoroutine("beginPhase");
     }
+
     public abstract IEnumerator beginPhase();
-    public abstract IEnumerator delayAction();
-    public abstract IEnumerator attackAction();
+    public abstract IEnumerator phaseLoop();  // phaseLoop will have an inf loop; next phase will interrupt it with StopAllCoroutines
 }

@@ -547,27 +547,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 998612785880363931, guid: 002353491c652c9489c6743957d9bd4f,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 2508099184500051154, guid: 12a9b0bc07dedb148bca20c90a6a1794,
-        type: 3}
-    - target: {fileID: 998612785880363931, guid: 002353491c652c9489c6743957d9bd4f,
-        type: 3}
-      propertyPath: cooldown
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 998612785880363931, guid: 002353491c652c9489c6743957d9bd4f,
-        type: 3}
-      propertyPath: abilityName
-      value: Player Single Shot
-      objectReference: {fileID: 0}
-    - target: {fileID: 3827527434756603748, guid: 002353491c652c9489c6743957d9bd4f,
-        type: 3}
-      propertyPath: dashTime
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 3827527434756603748, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
       propertyPath: dashSpeed
