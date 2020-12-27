@@ -16,6 +16,7 @@ public class Player : Entity
 
     void Start()
     {
+        setInvulnerable(true);
         dashing = false;
         rb = GetComponent<Rigidbody2D>();
         setSpeed(baseMoveSpeed);

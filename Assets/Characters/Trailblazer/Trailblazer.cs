@@ -8,7 +8,7 @@ public class Trailblazer : Entity
     private List<Phase> phases = new List<Phase>();
     private int currentPhase;
 
-    private void nextPhase()
+    public void nextPhase()
     {
         phases[currentPhase].exitPhase();
         currentPhase++;
