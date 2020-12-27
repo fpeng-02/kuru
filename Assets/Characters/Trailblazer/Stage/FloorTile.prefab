@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6317487428802224909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6317487428802224910
@@ -96,10 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e3e9ee00517974fa470534377a7fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorSprite: {fileID: 21300000, guid: e9556ec9aaa0102428e12ab0d778f6e1, type: 3}
-  warningSprite: {fileID: 21300000, guid: ede368eb991a3aa4080d7233f905dd71, type: 3}
-  lavaSprite: {fileID: 21300000, guid: bedde146aa44fe944bf1a6c7a5315d83, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 93eaf6f81c9a8ce46ad56cd10565a7bd, type: 3}
+  floorSprite: {fileID: 21300000, guid: 42da3da36d226f944a43030f49b4fbbe, type: 3}
+  warningSprite: {fileID: 21300000, guid: 847eb1a1eb1ac114d8f082224f0c53e1, type: 3}
+  lavaSprite: {fileID: 21300000, guid: e7a2fc970181235408f8da88c8166327, type: 3}
+  highlightSprite: {fileID: 21300000, guid: 1c1a3dc0ca09218458b97cd27fce0b99, type: 3}
   warningTime: 1
   lavaTime: 2
   permanentDisable: 0
