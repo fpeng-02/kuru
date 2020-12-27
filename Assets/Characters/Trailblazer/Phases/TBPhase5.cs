@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TBPhase : MonoBehaviour
+public class TBPhase5 : Phase
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float interval;
+    public override IEnumerator beginPhase()
     {
-        
+        //Introduction cutscene
+        yield return phaseLoop();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override IEnumerator phaseLoop()
     {
-        
+        while (true)
+        {
+            // delay
+            owner.cast("Chain Pound");
+
+            yield return new WaitForSeconds(interval);
+            // laser!!
+        }
+    }
+
+    public override void exitPhase()
+    {
+        StopAllCoroutines();
     }
 }

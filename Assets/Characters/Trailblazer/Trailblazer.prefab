@@ -20,10 +20,12 @@ GameObject:
   - component: {fileID: 4302413235245228807}
   - component: {fileID: 7898555137311368260}
   - component: {fileID: 6596433360695609224}
+  - component: {fileID: 453729271492370565}
   - component: {fileID: 4302413235245228805}
   - component: {fileID: 4302413235245228802}
   - component: {fileID: 8305824395973354505}
   - component: {fileID: 6917911427879531957}
+  - component: {fileID: 159434515008101678}
   m_Layer: 8
   m_Name: Trailblazer
   m_TagString: Untagged
@@ -254,13 +256,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  hitPoints: 500
+  hitPoints: 200
   entityName: Trailblazer
   phaseThresholds:
-  - 400
-  - 300
-  - 200
-  - 100
+  - 500
+  - 500
+  - 500
+  - 500
+  - 0
 --- !u!114 &4302413235245228804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +378,28 @@ MonoBehaviour:
   damageInterval: 0.1
   beamPrepWidth: 0.2
   beamFireWidth: 2
+--- !u!114 &453729271492370565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302413235245228924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8256df445a64e42900a8f2b89c4d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Chain Pound
+  uptime: 0
+  jumpDelay: 4
+  xUpperBound: 5
+  yUpperBound: 5
+  xLowerBound: -5
+  yLowerBound: -5
+  radius: 1
+  fractionHitForDamage: 0.1
 --- !u!114 &4302413235245228805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,4 +486,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movesetNames: []
   survivalTime: 0
+  interval: 2
+  timer: {fileID: 0}
+--- !u!114 &159434515008101678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302413235245228924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96e0043be2088c46ba9a37b007eeec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movesetNames:
+  - '"Chain Pound"'
   interval: 2
