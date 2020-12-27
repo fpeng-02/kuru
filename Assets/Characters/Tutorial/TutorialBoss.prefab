@@ -260,7 +260,8 @@ MonoBehaviour:
   cooldown: 0
   abilityName: Tutorial Laser Attack
   uptime: 2
-  effectList: []
+  laserEffect: {fileID: 2088471555564769874, guid: 386e814c3303b7346ad17cb83969791d,
+    type: 3}
   chargeTime: 0.5
   damageInterval: 0.1
   beamWidth: 0.5

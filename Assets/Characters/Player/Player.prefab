@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66ccad83c6abd0498af85f65c8e899e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.2
+  cooldown: 0.1
   abilityName: Player Single Shot
   uptime: 0
   bullet: {fileID: 2508099184500051154, guid: 12a9b0bc07dedb148bca20c90a6a1794, type: 3}
@@ -185,3 +185,4 @@ MonoBehaviour:
   uptime: 0
   dashSpeedBonus: 5
   dashTime: 0.2
+  postDashTime: 0

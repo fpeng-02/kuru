@@ -28,7 +28,7 @@ public abstract class Projectile : MonoBehaviour
         GetComponents<Effect>(effectList);
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         //
 
@@ -58,6 +58,7 @@ public abstract class Projectile : MonoBehaviour
         }
     }
 
+    //We should add a method doing movement (virtual) that we call in fixedupdate
     void FixedUpdate()
     {
         rb2d.MovePosition(rb2d.transform.position + getQuaternion() * Vector3.right * speed * Time.deltaTime);

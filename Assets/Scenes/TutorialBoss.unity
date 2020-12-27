@@ -749,6 +749,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4662334776010518610, guid: cda607c0ee63586419385e40016d18f9,
+        type: 3}
+      propertyPath: laserEffect
+      value: 
+      objectReference: {fileID: 2088471555564769874, guid: 386e814c3303b7346ad17cb83969791d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cda607c0ee63586419385e40016d18f9, type: 3}
 --- !u!4 &1094550173 stripped

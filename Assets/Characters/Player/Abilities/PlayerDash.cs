@@ -6,6 +6,8 @@ public class PlayerDash : AbilitySequence
 {
     [SerializeField] private float dashSpeedBonus;
     [SerializeField] private float dashTime;
+    [SerializeField] private float postDashTime;
+
 
     public override IEnumerator cast()
     {
@@ -20,6 +22,7 @@ public class PlayerDash : AbilitySequence
         yield return new WaitForSeconds(dashTime);
         caster.setInvulnerable(false);
         caster.setSpeed(player.getBaseMoveSpeed());
+        yield return new WaitForSeconds(postDashTime);
         player.setDashing(false);
     }
 }
