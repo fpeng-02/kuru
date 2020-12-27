@@ -21,6 +21,7 @@ public abstract class Entity : MonoBehaviour
         }
         this.hitPoints = hp; 
     }
+    public void setHitPointsBypass(float hp) { this.hitPoints = hp; }
     public float getHitPoints() { return this.hitPoints; }
     public string getEntityName() { return this.entityName; }
 

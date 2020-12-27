@@ -8,6 +8,14 @@ public class TBPhase5 : Phase
     public override IEnumerator beginPhase()
     {
         //Introduction cutscene
+        owner.setInvulnerable(true);
+        // set all tiles to non-permanent and back to floor
+        List<FloorTile> allTiles = GameObject.Find("FloorTileManager").GetComponent<FloorTileManager>().getAllTiles();
+        foreach (FloorTile tile in allTiles) {
+            tile.StopAllCoroutines();
+            tile.setPermanentDisable(false);
+            tile.setFloor();
+        }
         yield return phaseLoop();
     }
 

@@ -256,13 +256,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  hitPoints: 200
+  hitPoints: 1000
   entityName: Trailblazer
   phaseThresholds:
-  - 500
-  - 500
-  - 500
-  - 500
+  - 800
+  - 600
+  - 400
+  - 0
   - 0
 --- !u!114 &4302413235245228804
 MonoBehaviour:
@@ -334,8 +334,8 @@ MonoBehaviour:
   cooldown: 0
   abilityName: Pound Fissure
   uptime: 0
-  additionalFissures: 4
-  fissureWidth: 0.3
+  additionalFissures: 6
+  fissureWidth: 0.5
 --- !u!114 &7898555137311368260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movesetNames: []
-  survivalTime: 0
+  survivalTime: 30
   interval: 2
   timer: {fileID: 0}
 --- !u!114 &159434515008101678

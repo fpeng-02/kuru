@@ -30,7 +30,7 @@ public class TutorialBoss : Entity
     
     protected override void checkDie()
     {
-        if (hitPoints < 0) {
+        if (hitPoints <= 0) {
             if (!revived) {
                 nextPhase();
                 revived = true;

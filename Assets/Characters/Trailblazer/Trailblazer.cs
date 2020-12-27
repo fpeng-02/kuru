@@ -24,7 +24,7 @@ public class Trailblazer : Entity
 
     public override void customUpdate()
     {
-        if (hitPoints < phaseThresholds[currentPhase]) {
+        if (hitPoints <= phaseThresholds[currentPhase]) {
             nextPhase();
         }
     }

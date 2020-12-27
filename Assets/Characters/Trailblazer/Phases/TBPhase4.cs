@@ -53,10 +53,11 @@ public class TBPhase4 : Phase
         if (active) {
             timerText.text = string.Format("{0:##.##}", survivalTime);
             survivalTime -= Time.deltaTime;
-        }
-        if (survivalTime < 0) {
-            Trailblazer boss = (Trailblazer)owner;
-            boss.nextPhase();
+            if (survivalTime < 0) {
+                active = false;
+                Trailblazer boss = (Trailblazer)owner;
+                boss.nextPhase();
+            }
         }
     }
 }

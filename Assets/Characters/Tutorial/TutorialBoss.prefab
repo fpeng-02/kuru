@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   hitPoints: 800
-  entityName: 
+  entityName: Tutorial
   phaseThresholds:
   - 600
   - 400
@@ -331,4 +331,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movesetNames: []
   dashSpeed: 20
-  reviveTo: 200
+  reviveTo: 400
