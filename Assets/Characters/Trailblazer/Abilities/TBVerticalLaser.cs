@@ -60,7 +60,7 @@ public class TBVerticalLaser : AbilitySequence
         cf.layerMask = LayerMask.GetMask("Entity", "Player");
         while (fireUptime >= 0) {
             yield return new WaitForSeconds(damageInterval);
-            Physics2D.CircleCast(this.transform.position, beamFireWidth / 2, playerPos, cf, rayResults, Vector3.Magnitude(laserDistance));
+            Physics2D.CircleCast(this.transform.position, beamFireWidth / 2, castDirVector, cf, rayResults, Vector3.Magnitude(laserDistance));
             foreach (RaycastHit2D curHit in rayResults) {
                 Vector3 targetCurPos = curHit.transform.position;
                 GameObject child = (GameObject)Instantiate(laserEffect, targetCurPos, Quaternion.Euler(0, 0, 0));

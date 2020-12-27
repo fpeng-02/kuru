@@ -26,4 +26,11 @@ public class TutorialPhase4 : Phase
             yield return new WaitForSeconds(2.2f);
         }
     }
+
+    public override void exitPhase()
+    {
+        StopAllCoroutines();
+        GetComponent<LineRenderer>().enabled = false;
+    }
+
 }

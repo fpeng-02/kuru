@@ -11,8 +11,8 @@ public class FloorTile : MonoBehaviour
 
     [SerializeField] private float warningTime;
     [SerializeField] private float lavaTime;
+    [SerializeField] private bool permanentDisable;
     private FloorState state;
-
     private SpriteRenderer sR;
 
     public FloorState getState() { return this.state; }
@@ -20,16 +20,17 @@ public class FloorTile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        permanentDisable = false;
         sR = this.GetComponent<SpriteRenderer>();
         setFloor();
     }
 
+    public void setPermanentDisable(bool permanentDisable) { this.permanentDisable = permanentDisable; }
     public void setWarningTime(float warningTime) { this.warningTime = warningTime; }
     public void setLavaTime(float lavaTime) { this.lavaTime = lavaTime; }
 
     public void setFloor() { sR.sprite = floorSprite; state = FloorState.Floor; }
     public void setWarning() { StartCoroutine("warning"); }
-    public void setWarningToPermanentLava() { StartCoroutine("warningToPermanentLava"); }
     public void setLava() { StartCoroutine("lava"); }
     public void setExtendedLava() { StartCoroutine("extendedLava"); }
     public void setPermanentLava() { sR.sprite = lavaSprite; state = FloorState.Lava; }
@@ -39,15 +40,11 @@ public class FloorTile : MonoBehaviour
         sR.sprite = warningSprite;
         state = FloorState.Warning;
         yield return new WaitForSeconds(warningTime);
-        yield return lava();
-    }
-
-    public IEnumerator warningToPermanentLava()
-    {
-        sR.sprite = warningSprite;
-        state = FloorState.Warning;
-        yield return new WaitForSeconds(warningTime);
-        setPermanentLava();
+        if (permanentDisable) {
+            setPermanentLava();
+        } else {
+            yield return lava();
+        }
     }
 
     public IEnumerator lava()

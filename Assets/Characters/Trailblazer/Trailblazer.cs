@@ -10,7 +10,7 @@ public class Trailblazer : Entity
 
     private void nextPhase()
     {
-        phases[currentPhase].StopAllCoroutines();
+        phases[currentPhase].exitPhase();
         currentPhase++;
         phases[currentPhase].init(this);
     }

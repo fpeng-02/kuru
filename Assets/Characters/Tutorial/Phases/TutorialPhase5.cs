@@ -10,9 +10,6 @@ public class TutorialPhase5 : Phase
 
     public override IEnumerator beginPhase()
     {
-        // turn laser off if it was active in the last phase (really janky bad solution)
-        TutorialLaserAttack laserAttack = owner.GetComponent("TutorialLaserAttack") as TutorialLaserAttack;
-        laserAttack.turnOff();
         owner.setHitPoints(reviveTo);
         owner.setSpeed(0);
         owner.setInvulnerable(true);

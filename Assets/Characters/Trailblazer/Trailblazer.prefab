@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 4302413235245228805}
   - component: {fileID: 4302413235245228802}
   - component: {fileID: 8305824395973354505}
-  m_Layer: 0
+  - component: {fileID: 6917911427879531957}
+  m_Layer: 8
   m_Name: Trailblazer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,6 +260,7 @@ MonoBehaviour:
   - 400
   - 300
   - 200
+  - 100
 --- !u!114 &4302413235245228804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +351,7 @@ MonoBehaviour:
   laserEffect: {fileID: 4519358536521594140, guid: 3a8642b25c417c9439499be1784edcd4,
     type: 3}
   chargeTime: 1
-  damageInterval: 0
+  damageInterval: 0.1
   beamPrepWidth: 0.2
   beamFireWidth: 2
 --- !u!114 &6596433360695609224
@@ -370,7 +372,7 @@ MonoBehaviour:
   laserEffect: {fileID: 4519358536521594140, guid: 3a8642b25c417c9439499be1784edcd4,
     type: 3}
   chargeTime: 1
-  damageInterval: 0
+  damageInterval: 0.1
   beamPrepWidth: 0.2
   beamFireWidth: 2
 --- !u!114 &4302413235245228805
@@ -432,7 +434,7 @@ MonoBehaviour:
   - Horizontal Laser
   - Vertical Laser
   playerSafeRadius: 0
-  interval: 2
+  interval: 3
   waitAfterTeleport: 0
   islandCenters:
   - {x: -3, y: 3}
@@ -445,3 +447,18 @@ MonoBehaviour:
   - {x: 0, y: -3}
   - {x: 3, y: -3}
   islandRadius: 1
+--- !u!114 &6917911427879531957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302413235245228924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f9d6471dc01e24c9aaea1016982dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movesetNames: []
+  survivalTime: 0
+  interval: 2

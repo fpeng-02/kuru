@@ -32,10 +32,12 @@ public class TBPhase3 : Phase
         List<FloorTile> allTiles = GameObject.Find("FloorTileManager").GetComponent<FloorTileManager>().getAllTiles();
         foreach (FloorTile tile in allTiles) {
             tile.StopAllCoroutines();
-            tile.setWarningToPermanentLava();
+            tile.setPermanentDisable(true);
+            tile.setWarning();
         }
         foreach (FloorTile tile in safeTiles) {
             tile.StopAllCoroutines();
+            tile.setPermanentDisable(false);
             tile.setFloor();
         }
 
@@ -50,5 +52,11 @@ public class TBPhase3 : Phase
             // laser!!
             owner.cast(movesetNames[Random.Range(0, movesetNames.Count)]);
         }
+    }
+
+    public override void exitPhase()
+    {
+        StopAllCoroutines();
+        GetComponent<LineRenderer>().enabled = false;
     }
 }

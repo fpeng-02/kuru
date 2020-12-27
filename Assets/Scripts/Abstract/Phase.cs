@@ -15,4 +15,8 @@ public abstract class Phase : MonoBehaviour
 
     public abstract IEnumerator beginPhase();
     public abstract IEnumerator phaseLoop();  // phaseLoop will have an inf loop; next phase will interrupt it with StopAllCoroutines
+    public virtual void exitPhase()
+    {
+        StopAllCoroutines();
+    }
 }
