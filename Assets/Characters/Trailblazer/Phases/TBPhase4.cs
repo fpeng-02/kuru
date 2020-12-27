@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TBPhase4 : Phase
 {
     [SerializeField] private float survivalTime;
     [SerializeField] private float interval;
+    [SerializeField] private GameObject timer; // might be a cooler GameObject if we make the timer actually look good 
+    private Text timerText;
+    private bool active = false;
 
     public override IEnumerator beginPhase()
     {
+        timerText = timer.GetComponent<Text>();
+        timer.SetActive(true);
         // go back to the center
         owner.setInvulnerable(true);
         this.transform.position = new Vector3(0, 0, 0);
@@ -20,6 +26,7 @@ public class TBPhase4 : Phase
             tile.setPermanentDisable(true);
             tile.setFloor();
         }
+        active = true;
         yield return phaseLoop();
     }
 
@@ -35,7 +42,21 @@ public class TBPhase4 : Phase
 
     public override void exitPhase()
     {
+        active = false;
+        timer.SetActive(false);
         StopAllCoroutines();
         owner.setInvulnerable(false);
+    }
+
+    void Update()
+    {
+        if (active) {
+            timerText.text = string.Format("{0:##.##}", survivalTime);
+            survivalTime -= Time.deltaTime;
+        }
+        if (survivalTime < 0) {
+            Trailblazer boss = (Trailblazer)owner;
+            boss.nextPhase();
+        }
     }
 }

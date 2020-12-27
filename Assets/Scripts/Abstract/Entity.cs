@@ -15,7 +15,12 @@ public abstract class Entity : MonoBehaviour
     public bool getInvulnerable() { return this.invulnerable; }
     public void setSpeed(float speed) { this.speed = speed; }
     public float getSpeed() { return this.speed; }
-    public void setHitPoints(float hp) { this.hitPoints = hp; }
+    public void setHitPoints(float hp) { 
+        if (hp < hitPoints && invulnerable) {
+            return;
+        }
+        this.hitPoints = hp; 
+    }
     public float getHitPoints() { return this.hitPoints; }
     public string getEntityName() { return this.entityName; }
 
