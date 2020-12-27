@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TBHorizontalLaser : AbilitySequence
 {
-    [SerializeField] private List<Effect> effectList = new List<Effect>();
+    [SerializeField] private GameObject laserEffect;
     [SerializeField] private float chargeTime;
     [SerializeField] private float damageInterval;
     [SerializeField] private float beamPrepWidth;
@@ -62,8 +62,11 @@ public class TBHorizontalLaser : AbilitySequence
             yield return new WaitForSeconds(damageInterval);
             Physics2D.CircleCast(this.transform.position, beamFireWidth / 2, playerPos, cf, rayResults, Vector3.Magnitude(laserDistance));
             foreach (RaycastHit2D curHit in rayResults) {
-                Entity curEnt = curHit.transform.gameObject.GetComponent<Entity>();
-                // damage :)
+                Vector3 targetCurPos = curHit.transform.position;
+                GameObject child = (GameObject)Instantiate(laserEffect, targetCurPos, Quaternion.Euler(0, 0, 0));
+                child.GetComponent<Projectile>().setOwner(this.gameObject.GetComponent<Entity>());
+                child.GetComponent<Projectile>().initializeDirVector(new Vector3(0, 0, 0));
+                child.GetComponent<Projectile>().initializeQuaternion(Quaternion.Euler(0, 0, 0));
             }
             fireUptime -= damageInterval;
             rayResults.Clear();

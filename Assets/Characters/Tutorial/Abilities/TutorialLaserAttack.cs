@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TutorialLaserAttack : AbilitySequence
 {
-    //Changed________________________________________________________________________________________________
     [SerializeField] private GameObject laserEffect;
     [SerializeField] private float chargeTime;
     [SerializeField] private float damageInterval;
@@ -38,7 +37,6 @@ public class TutorialLaserAttack : AbilitySequence
         //Create the line to initial hit spot.
         Vector3 playerPos = getPlayerVector();
         lr.enabled = true;
-        //lr = this.gameObject.AddComponent<LineRenderer>() as LineRenderer;
 
         RaycastHit2D initHit = Physics2D.Raycast(this.transform.position, playerPos, 50.0f, LayerMask.GetMask("Environment"),-100,100);
 
@@ -62,13 +60,11 @@ public class TutorialLaserAttack : AbilitySequence
         //Filter raycast to only hit ents (rip trees)
         cf.layerMask = LayerMask.GetMask("Entity", "Player");
 
-        while (tempUptime >= 0)
-        {
+        while (tempUptime >= 0) {
             yield return new WaitForSeconds(damageInterval);
             Physics2D.CircleCast(this.transform.position, beamWidth/2, playerPos, cf, rayResults, Vector3.Magnitude(laserDistance));
             foreach (RaycastHit2D curHit in rayResults)
             {
-                //Changed________________________________________________________________________________________________
                 Vector3 targetCurPos = curHit.transform.position;
                 GameObject child = (GameObject)Instantiate(laserEffect, targetCurPos, Quaternion.Euler(0, 0, 0));
                 child.GetComponent<Projectile>().setOwner(this.gameObject.GetComponent<Entity>());
@@ -80,8 +76,6 @@ public class TutorialLaserAttack : AbilitySequence
         }
 
         lr.enabled = false;
-        //GameObject.Destroy(this.gameObject.GetComponent<LineRenderer>());
-        //Debug.Log(this.GetComponent<LineRenderer>());
         yield return null;
     }
 
