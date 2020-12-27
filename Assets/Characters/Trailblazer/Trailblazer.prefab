@@ -346,7 +346,8 @@ MonoBehaviour:
   cooldown: 0
   abilityName: Horizontal Laser
   uptime: 2
-  effectList: []
+  laserEffect: {fileID: 4519358536521594140, guid: 3a8642b25c417c9439499be1784edcd4,
+    type: 3}
   chargeTime: 1
   damageInterval: 0
   beamPrepWidth: 0.2
@@ -366,7 +367,8 @@ MonoBehaviour:
   cooldown: 0
   abilityName: Vertical Laser
   uptime: 2
-  effectList: []
+  laserEffect: {fileID: 4519358536521594140, guid: 3a8642b25c417c9439499be1784edcd4,
+    type: 3}
   chargeTime: 1
   damageInterval: 0
   beamPrepWidth: 0.2
