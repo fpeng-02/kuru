@@ -14,6 +14,7 @@ public class FloorTile : MonoBehaviour
     [SerializeField] private bool permanentDisable;
     private FloorState state;
     private SpriteRenderer sR;
+    private bool highlight;
 
     public FloorState getState() { return this.state; }
 
@@ -29,11 +30,13 @@ public class FloorTile : MonoBehaviour
     public void setWarningTime(float warningTime) { this.warningTime = warningTime; }
     public void setLavaTime(float lavaTime) { this.lavaTime = lavaTime; }
 
-    public void setFloor() { sR.sprite = floorSprite; state = FloorState.Floor; }
+    public void setFloor() { sR.sprite = highlight ? highlightSprite : floorSprite; state = FloorState.Floor; }
     public void setWarning() { StartCoroutine("warning"); }
     public void setLava() { StartCoroutine("lava"); }
     public void setExtendedLava() { StartCoroutine("extendedLava"); }
     public void setPermanentLava() { sR.sprite = lavaSprite; state = FloorState.Lava; }
+    //public void setHighlight() { sR.sprite = highlightSprite; state = FloorState.Highlight; }
+    public void setHighlight(bool highlight) { this.highlight = highlight; }
 
     public IEnumerator warning()
     {
@@ -63,12 +66,6 @@ public class FloorTile : MonoBehaviour
         yield return new WaitForSeconds(lavaTime + warningTime);
         this.setFloor();
         yield return null;
-    }
-
-    public void setHighlight()
-    {
-        sR.sprite = highlightSprite;
-        state = FloorState.Highlight;
     }
 
     private void OnTriggerStay2D(Collider2D col)

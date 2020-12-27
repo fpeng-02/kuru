@@ -2420,6 +2420,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 453729271492370565, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: fractionHitForDamage
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: hitPoints
@@ -2505,6 +2510,11 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 88678718}
+    - target: {fileID: 6917911427879531957, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: survivalTime
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 934248ab176e2974ba0d269ba3927bae, type: 3}
 --- !u!1001 &5646041454869772589

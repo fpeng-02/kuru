@@ -33,8 +33,11 @@ public class TBChainPound : AbilitySequence
         {
             FloorTile tile = col.GetComponent<FloorTile>();
             toWarn.Add(tile);
-            tile.StopAllCoroutines();
-            tile.setHighlight();
+            //tile.StopAllCoroutines();
+            tile.setHighlight(true);
+            if (tile.getState() == FloorState.Floor) {
+                tile.setFloor();
+            }
         }
         yield return new WaitForSeconds(jumpDelay);
 
@@ -42,7 +45,7 @@ public class TBChainPound : AbilitySequence
         this.transform.position = new Vector3(jumpPos.x, jumpPos.y, -5);
         float lavaCount = 0;
         float floorCount = 0;
-        // count the number of tiles that are floor vs lava
+        // on impact, count the number of tiles that are floor vs lava
         foreach (FloorTile tile in toWarn) {
             FloorState tileState = tile.getState();
             if (tileState == FloorState.Lava || tileState == FloorState.Warning) {
@@ -55,6 +58,7 @@ public class TBChainPound : AbilitySequence
         if ( lavaCount / (lavaCount + floorCount) > fractionHitForDamage) {
             caster.cast("Radial Shotgun"); // maybe replace with "rage" one idk
             foreach (FloorTile tile in toWarn) {
+                tile.setHighlight(false);
                 FloorState tileState = tile.getState();
                 if (!(tileState == FloorState.Lava)) {
                     tile.setLava();
@@ -66,10 +70,9 @@ public class TBChainPound : AbilitySequence
         } else {
             caster.cast("Radial Shotgun");
             foreach (FloorTile tile in toWarn) {
+                tile.setHighlight(false);
                 FloorState tileState = tile.getState();
-                if (tileState == FloorState.Highlight) {
-                    tile.setWarning();
-                }
+                tile.setWarning();
             }
         }
         

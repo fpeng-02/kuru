@@ -101,7 +101,7 @@ MonoBehaviour:
   lavaSprite: {fileID: 21300000, guid: bedde146aa44fe944bf1a6c7a5315d83, type: 3}
   highlightSprite: {fileID: 21300000, guid: 93eaf6f81c9a8ce46ad56cd10565a7bd, type: 3}
   warningTime: 1
-  lavaTime: 1.5
+  lavaTime: 2
   permanentDisable: 0
 --- !u!61 &6317487428802224905
 BoxCollider2D:
