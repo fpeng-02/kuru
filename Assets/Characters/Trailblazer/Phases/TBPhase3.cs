@@ -10,9 +10,11 @@ public class TBPhase3 : Phase
     [SerializeField] private List<Vector2> islandCenters;
     [SerializeField] private float islandRadius; // all islands constant for size for now, but can be changed to a list if diff radii are wanted
     private List<Collider2D> toSet = new List<Collider2D>();
+    private GameObject player;
 
     public override IEnumerator beginPhase()
     {
+        player = GameObject.Find("Player");
         // choose the islands that aren't going to be permanently destroyed
         List<FloorTile> safeTiles = new List<FloorTile>();
         ContactFilter2D cf = new ContactFilter2D();
@@ -42,6 +44,11 @@ public class TBPhase3 : Phase
 
     public override IEnumerator phaseLoop()
     {
-        yield break;
+        while (true) {
+            // delay
+            yield return new WaitForSeconds(interval);
+            // laser!!
+            owner.cast(movesetNames[Random.Range(0, movesetNames.Count)]);
+        }
     }
 }
