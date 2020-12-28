@@ -16,9 +16,9 @@ public class PlayerDash : AbilitySequence
         player.setDashing(true);
         caster.setInvulnerable(true);
         caster.setSpeed(player.getSpeed() + dashSpeedBonus);
-        Vector3 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
+        /*Vector3 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
         dir.z = 0;
-        player.setDirVect(dir.normalized);
+        player.setDirVect(dir.normalized);*/
         yield return new WaitForSeconds(dashTime);
         caster.setInvulnerable(false);
         caster.setSpeed(player.getBaseMoveSpeed());

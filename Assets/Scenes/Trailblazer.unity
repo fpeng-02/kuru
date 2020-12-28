@@ -2428,21 +2428,26 @@ PrefabInstance:
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: hitPoints
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: phaseThresholds.Array.data[0]
-      value: 600
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: phaseThresholds.Array.data[1]
-      value: 400
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: phaseThresholds.Array.data[2]
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: phaseThresholds.Array.data[3]
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228924, guid: 934248ab176e2974ba0d269ba3927bae,
