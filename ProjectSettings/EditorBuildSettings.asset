@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Trailblazer.unity
+    guid: 81e84cfefa2b67e4bb7fd49948b9623b
   m_configObjects: {}

@@ -34,8 +34,10 @@ public class TBPhase4 : Phase
     {
         while (true) {
             // delay
+            owner.cast("Bomb");
             yield return new WaitForSeconds(interval);
             // laser!!
+
             owner.cast("Radial Shotgun");
         }
     }

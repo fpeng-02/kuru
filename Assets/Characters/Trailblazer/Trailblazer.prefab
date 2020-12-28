@@ -15,12 +15,14 @@ GameObject:
   - component: {fileID: 769764509580032975}
   - component: {fileID: 4302413235245228923}
   - component: {fileID: 4302413235245228804}
+  - component: {fileID: 4801937367788399267}
   - component: {fileID: 4302413235245228803}
   - component: {fileID: 4302413235245228922}
   - component: {fileID: 4302413235245228807}
   - component: {fileID: 7898555137311368260}
   - component: {fileID: 6596433360695609224}
   - component: {fileID: 453729271492370565}
+  - component: {fileID: 2079556390957149346}
   - component: {fileID: 4302413235245228805}
   - component: {fileID: 4302413235245228802}
   - component: {fileID: 8305824395973354505}
@@ -286,6 +288,22 @@ MonoBehaviour:
   - 15
   - 30
   bullet: {fileID: 8989099774985492329, guid: a8abbfdfb67cfee4a8b7d5a7f20a7f9d, type: 3}
+--- !u!114 &4801937367788399267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302413235245228924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0bae63e5c694c4fae2925008eec733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Single Shot
+  uptime: 0
+  bullet: {fileID: 8989099774985492329, guid: a8abbfdfb67cfee4a8b7d5a7f20a7f9d, type: 3}
 --- !u!114 &4302413235245228803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +418,22 @@ MonoBehaviour:
   yLowerBound: -5
   radius: 1
   fractionHitForDamage: 0.1
+--- !u!114 &2079556390957149346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302413235245228924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a3d0238059e7b46a4acaea2628a455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Bomb
+  uptime: 0
+  bomb: {fileID: 927115607741127580, guid: a16addd01b2002242812de60ee8a7a01, type: 3}
 --- !u!114 &4302413235245228805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +534,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96e0043be2088c46ba9a37b007eeec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movesetNames:
-  - '"Chain Pound"'
+  movesetNames: []
   interval: 2

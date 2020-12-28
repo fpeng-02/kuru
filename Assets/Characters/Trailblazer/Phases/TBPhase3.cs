@@ -40,6 +40,13 @@ public class TBPhase3 : Phase
             tile.setPermanentDisable(false);
             tile.setFloor();
         }
+        //Pause and teleport to a random spot on the edge while invincible
+        owner.setInvulnerable(true);
+        this.transform.position = new Vector3(-5, 0, 0);
+        yield return new WaitForSeconds(interval);
+        owner.setInvulnerable(false);
+
+        
 
         yield return phaseLoop();
     }
@@ -48,9 +55,10 @@ public class TBPhase3 : Phase
     {
         while (true) {
             // delay
+            owner.cast(movesetNames[Random.Range(0, movesetNames.Count)]);
             yield return new WaitForSeconds(interval);
             // laser!!
-            owner.cast(movesetNames[Random.Range(0, movesetNames.Count)]);
+            
         }
     }
 
