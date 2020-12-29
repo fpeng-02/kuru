@@ -2564,12 +2564,12 @@ PrefabInstance:
     - target: {fileID: 5646041454928668905, guid: 39d5a51a3722cf742a18a883d51c82be,
         type: 3}
       propertyPath: yLowerBound
-      value: -3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5646041454928668905, guid: 39d5a51a3722cf742a18a883d51c82be,
         type: 3}
       propertyPath: yUpperBound
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5646041454928668909, guid: 39d5a51a3722cf742a18a883d51c82be,
         type: 3}
