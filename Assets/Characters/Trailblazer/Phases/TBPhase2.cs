@@ -34,9 +34,11 @@ public class TBPhase2 : Phase
             yield return new WaitForSeconds(waitAfterTeleport);
             // then do a random pound
             owner.cast(movesetNames[Random.Range(0, movesetNames.Count)]);
-            owner.cast("Radial Shotgun"); // and a radial 
+            //owner.cast("Radial Shotgun"); // and a radial 
+            owner.cast("Ring"); // and a radial 
             yield return new WaitForSeconds(secondShotgunDelay);
-            owner.cast("Radial Shotgun"); // and another radial
+            //owner.cast("Radial Shotgun"); // and another radial
+            owner.cast("Ring"); // and a radial 
         }
     }
 }

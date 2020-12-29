@@ -9,6 +9,7 @@ public class TBPhase3 : Phase
     [SerializeField] private float waitAfterTeleport;
     [SerializeField] private List<Vector2> islandCenters;
     [SerializeField] private float islandRadius; // all islands constant for size for now, but can be changed to a list if diff radii are wanted
+    [SerializeField] private float islandSide; 
     private List<Collider2D> toSet = new List<Collider2D>();
     private GameObject player;
 
@@ -22,7 +23,9 @@ public class TBPhase3 : Phase
         cf.useLayerMask = true;
         cf.useTriggers = true;
         foreach (Vector2 center in islandCenters) {
-            Physics2D.OverlapCircle(center, islandRadius, cf, toSet);
+            //Physics2D.OverlapCircle(center, islandRadius, cf, toSet);
+            Physics2D.OverlapBox(center, new Vector2(islandSide, islandSide), 0.0f, cf, toSet);
+
             foreach (Collider2D col in toSet) {
                 safeTiles.Add(col.gameObject.GetComponent<FloorTile>());
             }

@@ -38,7 +38,7 @@ public class TBPhase4 : Phase
             yield return new WaitForSeconds(interval);
             // laser!!
 
-            owner.cast("Radial Shotgun");
+            owner.cast("Ring");
         }
     }
 

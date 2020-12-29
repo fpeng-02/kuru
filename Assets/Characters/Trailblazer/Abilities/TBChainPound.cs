@@ -56,7 +56,7 @@ public class TBChainPound : AbilitySequence
         }
         // if enough tiles were knocked out, damage the boss
         if ( lavaCount / (lavaCount + floorCount) > fractionHitForDamage) {
-            caster.cast("Radial Shotgun"); // maybe replace with "rage" one idk
+            caster.cast("Ring"); // maybe replace with "rage" one idk
             foreach (FloorTile tile in toWarn) {
                 tile.setHighlight(false);
                 FloorState tileState = tile.getState();
@@ -68,7 +68,7 @@ public class TBChainPound : AbilitySequence
             }
             caster.setHitPointsBypass(caster.getHitPoints() - 40);
         } else {
-            caster.cast("Radial Shotgun");
+            caster.cast("Ring");
             foreach (FloorTile tile in toWarn) {
                 tile.setHighlight(false);
                 FloorState tileState = tile.getState();

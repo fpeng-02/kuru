@@ -2431,6 +2431,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 05cfa49935bb5aa4eb2be1bc8ee76dfd,
         type: 3}
+    - target: {fileID: 4302413235245228921, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302413235245228921, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: hitPoints
@@ -2516,6 +2526,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4501364481895947956, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: ring
+      value: 
+      objectReference: {fileID: 1851415074301857530, guid: 824a77c4c0a89ae4fafee58600b0fca9,
+        type: 3}
     - target: {fileID: 6917911427879531957, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: timer

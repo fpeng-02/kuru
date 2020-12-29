@@ -16,7 +16,7 @@ public class Trailblazer : Entity
     }
 
     void Start()
-    {
+    {   
         GetComponents<Phase>(phases);
         currentPhase = 0;
         phases[currentPhase].init(this);

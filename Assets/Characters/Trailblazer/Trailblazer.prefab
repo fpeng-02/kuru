@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 6596433360695609224}
   - component: {fileID: 453729271492370565}
   - component: {fileID: 2079556390957149346}
+  - component: {fileID: 4501364481895947956}
   - component: {fileID: 4302413235245228805}
   - component: {fileID: 4302413235245228802}
   - component: {fileID: 8305824395973354505}
@@ -434,6 +435,22 @@ MonoBehaviour:
   abilityName: Bomb
   uptime: 0
   bomb: {fileID: 927115607741127580, guid: a16addd01b2002242812de60ee8a7a01, type: 3}
+--- !u!114 &4501364481895947956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302413235245228924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69967d62e3a9f244b3efdcc9cb48e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Ring
+  uptime: 0
+  ring: {fileID: 0}
 --- !u!114 &4302413235245228805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +523,7 @@ MonoBehaviour:
   - {x: 0, y: -3}
   - {x: 3, y: -3}
   islandRadius: 1
+  islandSide: 2
 --- !u!114 &6917911427879531957
 MonoBehaviour:
   m_ObjectHideFlags: 0
