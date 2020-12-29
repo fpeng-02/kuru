@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PentagonPhase : Phase
 {
+    [SerializeField] private float interval;
+
     public override IEnumerator beginPhase()
     {
         yield return phaseLoop();
@@ -11,6 +13,9 @@ public class PentagonPhase : Phase
 
     public override IEnumerator phaseLoop()
     {
-        yield break;
+        while (true) {
+            owner.cast("Meteor Shower");
+            yield return new WaitForSeconds(interval);
+        }
     }
 }
