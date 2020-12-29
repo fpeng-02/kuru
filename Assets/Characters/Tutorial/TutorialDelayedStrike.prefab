@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strike: {fileID: 7566962092916655390, guid: 2c2c3318f2e5ebb4784f4e13444ec356, type: 3}
-  strikeDelay: 2
+  strikeDelay: 2.5
 --- !u!212 &7114322532529364089
 SpriteRenderer:
   m_ObjectHideFlags: 0

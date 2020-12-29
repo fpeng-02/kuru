@@ -155,12 +155,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  hitPoints: 800
+  hitPoints: 1000
   entityName: Tutorial
   phaseThresholds:
-  - 600
-  - 400
-  - 200
+  - 750
+  - 500
+  - 250
+  - 0
   - 0
 --- !u!114 &8241171697261343379
 MonoBehaviour:

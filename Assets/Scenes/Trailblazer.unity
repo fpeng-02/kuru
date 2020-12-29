@@ -2454,7 +2454,7 @@ PrefabInstance:
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: phaseThresholds.Array.data[3]
-      value: 200
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228924, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}

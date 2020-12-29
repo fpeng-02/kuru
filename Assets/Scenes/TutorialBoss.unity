@@ -683,11 +683,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1453794089388110569, guid: cda607c0ee63586419385e40016d18f9,
-        type: 3}
-      propertyPath: phaseThresholds.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2609875782419983217, guid: cda607c0ee63586419385e40016d18f9,
         type: 3}
       propertyPath: m_BodyType
@@ -716,12 +711,12 @@ PrefabInstance:
     - target: {fileID: 2609875782419983223, guid: cda607c0ee63586419385e40016d18f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.29
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2609875782419983223, guid: cda607c0ee63586419385e40016d18f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.87
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2609875782419983223, guid: cda607c0ee63586419385e40016d18f9,
         type: 3}
