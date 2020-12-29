@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trailblazer : Entity
+public class Polygon : Entity
 {
     [SerializeField] private List<float> phaseThresholds;
     private List<Phase> phases = new List<Phase>();
@@ -15,11 +15,17 @@ public class Trailblazer : Entity
         phases[currentPhase].init(this);
     }
 
+    public void test()
+    {
+
+    }
+
     void Start()
-    {   
-        GetComponents<Phase>(phases);
+    {
+        InvokeRepeating("test", 0.0f, 3.0f);
+        /*GetComponents<Phase>(phases);
         currentPhase = 0;
-        phases[currentPhase].init(this);
+        phases[currentPhase].init(this);*/
     }
 
     public override void customUpdate()
