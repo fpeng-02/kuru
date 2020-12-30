@@ -16,16 +16,17 @@ public class TrianglePhaseA : Phase
         polygonCollider.enabled = true;
         this.transform.position = Vector3.zero;
         //Sprite to triangle
-        Debug.Log("Laser should've casted..");
         owner.cast("Tri Laser");
         rb2d.velocity = Vector2.zero;
         rb2d.angularVelocity = 10;
         yield return phaseLoop();
     }
+
     public override IEnumerator phaseLoop()
     {
         yield return null;
     }
+
     public override void exitPhase()
     {
         base.exitPhase();
@@ -41,7 +42,11 @@ public class TrianglePhaseA : Phase
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        GameObject go = Instantiate(bullet, this.transform.position, col.transform.rotation);
-        Debug.Log("ouch");
+        if (getPhaseActive()) {
+            if (col.transform.gameObject.layer != LayerMask.NameToLayer("Boss")) {
+                GameObject go = Instantiate(bullet, this.transform.position, col.transform.rotation);
+                Debug.Log("ouch");
+            }
+        }
     }
 }
