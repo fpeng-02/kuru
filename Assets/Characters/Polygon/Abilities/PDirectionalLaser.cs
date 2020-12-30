@@ -8,13 +8,10 @@ public class PDirectionalLaser : MonoBehaviour
     [SerializeField] private float chargeTime;
     [SerializeField] private float damageInterval;
     [SerializeField] private float beamWidth;
-    private GameObject parent;
     private LineRenderer lr;
-    private Quaternion offsetAngle;
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.rotation = offsetAngle;
         lr = this.gameObject.GetComponent<LineRenderer>() as LineRenderer;
         lr.enabled = true;
         //Create the line to initial hit spot
@@ -29,10 +26,6 @@ public class PDirectionalLaser : MonoBehaviour
         lr.enabled = false;
     }
 
-    public void setParent(GameObject parent)
-    {
-        this.parent = parent;
-    }
 
     public IEnumerator laserHit()
     {
@@ -53,7 +46,7 @@ public class PDirectionalLaser : MonoBehaviour
             {
                 Vector3 targetCurPos = curHit.transform.position;
                 GameObject child = (GameObject)Instantiate(laserEffect, targetCurPos, Quaternion.Euler(0, 0, 0));
-                child.GetComponent<Projectile>().setOwner(parent.gameObject.GetComponent<Entity>());
+                child.GetComponent<Projectile>().setOwner(this.transform.parent.gameObject.GetComponent<Entity>());
                 child.GetComponent<Projectile>().initializeDirVector(new Vector3(0, 0, 0));
                 child.GetComponent<Projectile>().initializeQuaternion(Quaternion.Euler(0, 0, 0));
             } 
@@ -63,7 +56,7 @@ public class PDirectionalLaser : MonoBehaviour
     }
     public Vector3 getLaserDir()
     {
-        Vector3 firePos = (parent.transform.rotation * offsetAngle) * Vector3.right;
+        Vector3 firePos = (this.transform.parent.transform.rotation * this.transform.rotation) * Vector3.right;
         RaycastHit2D initHit = Physics2D.Raycast(this.transform.position, firePos, 50.0f, LayerMask.GetMask("Environment"), -100, 100);
         return initHit.point;
     }
@@ -71,7 +64,7 @@ public class PDirectionalLaser : MonoBehaviour
     void Update()
     {
         //Check for relative position
-        lr.SetPosition(0, parent.transform.position);
+        lr.SetPosition(0, this.transform.parent.transform.position);
         lr.SetPosition(1, getLaserDir());
     }
 }

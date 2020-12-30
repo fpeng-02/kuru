@@ -661,7 +661,9 @@ GameObject:
   - component: {fileID: 524984145}
   - component: {fileID: 524984143}
   - component: {fileID: 524984141}
+  - component: {fileID: 524984147}
   - component: {fileID: 524984140}
+  - component: {fileID: 524984146}
   - component: {fileID: 524984142}
   m_Layer: 8
   m_Name: Polygon
@@ -704,7 +706,7 @@ MonoBehaviour:
   xLowerBound: -5
   yUpperBound: 5
   yLowerBound: -5
-  count: 4
+  count: 5
   meteorInterval: 0.2
 --- !u!114 &524984141
 MonoBehaviour:
@@ -739,7 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movesetNames: []
-  interval: 2
+  interval: 5
 --- !u!50 &524984143
 Rigidbody2D:
   serializedVersion: 4
@@ -842,6 +844,36 @@ PolygonCollider2D:
       - {x: 0.5115996, y: -1.0079}
       - {x: 0.97629994, y: 0.14270094}
       - {x: 0.0110345185, y: 1.0035524}
+--- !u!114 &524984146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524984138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa99c7870bac304f8b3bc960c484d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movesetNames: []
+--- !u!114 &524984147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524984138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24cb3c7c370e244188186c948ce0b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: TriLaser
+  uptime: 0
+  laserSpawner: {fileID: 7679618270055052061, guid: d10bd6d410482bc4c83dfbb5903151fd,
+    type: 3}
 --- !u!1001 &551468166
 PrefabInstance:
   m_ObjectHideFlags: 0
