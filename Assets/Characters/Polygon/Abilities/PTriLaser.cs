@@ -8,7 +8,9 @@ public class PTriLaser : AbilitySequence
 
     public override IEnumerator cast()
     {
-        for (int i = 0; i > 3; i++)
+        Debug.Log("New Laser Creation (Birth)");
+
+        for (int i = 0; i < 3; i++)
         {
             GameObject laser = Instantiate(laserSpawner, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 120*i), this.gameObject.transform);
         }

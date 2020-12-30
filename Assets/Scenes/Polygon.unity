@@ -725,6 +725,7 @@ MonoBehaviour:
   entityName: 
   phaseThresholds:
   - 800
+  - 600
   meteorStrikePosition: {x: 0, y: 0, z: 0}
   spawner: {fileID: 0}
   quat: {x: 0, y: 0, z: 0, w: 0}
@@ -870,7 +871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  abilityName: TriLaser
+  abilityName: Tri Laser
   uptime: 0
   laserSpawner: {fileID: 7679618270055052061, guid: d10bd6d410482bc4c83dfbb5903151fd,
     type: 3}
