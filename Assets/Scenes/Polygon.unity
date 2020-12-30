@@ -459,6 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movesetNames: []
   interval: 5
+  pentagonSprite: {fileID: 21300000, guid: f9bc3adcfadcec549bc92c7bfba97500, type: 3}
 --- !u!50 &524984143
 Rigidbody2D:
   serializedVersion: 4

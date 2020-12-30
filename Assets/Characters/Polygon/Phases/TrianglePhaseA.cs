@@ -6,6 +6,8 @@ public class TrianglePhaseA : Phase
 {
     public override IEnumerator beginPhase()
     {
+        this.transform.position = Vector3.zero;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         //Sprite to triangle
         Debug.Log("Laser should've casted..");
         owner.cast("Tri Laser");
