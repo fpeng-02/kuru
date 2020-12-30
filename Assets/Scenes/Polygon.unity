@@ -663,6 +663,7 @@ GameObject:
   - component: {fileID: 524984141}
   - component: {fileID: 524984147}
   - component: {fileID: 524984140}
+  - component: {fileID: 524984148}
   - component: {fileID: 524984146}
   - component: {fileID: 524984142}
   m_Layer: 8
@@ -680,7 +681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524984138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.52, y: -2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -722,7 +723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   hitPoints: 1000
-  entityName: 
+  entityName: Polygon
   phaseThresholds:
   - 800
   - 600
@@ -759,7 +760,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 30a5e8f5c16755b4cb6f7a45135e5186, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -824,8 +825,8 @@ PolygonCollider2D:
   m_GameObject: {fileID: 524984138}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_Material: {fileID: 6200000, guid: 30a5e8f5c16755b4cb6f7a45135e5186, type: 2}
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -842,7 +843,7 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.98050034, y: 0.14679909}
       - {x: -0.47584373, y: -0.9951606}
-      - {x: 0.5115996, y: -1.0079}
+      - {x: 0.48705155, y: -0.9997175}
       - {x: 0.97629994, y: 0.14270094}
       - {x: 0.0110345185, y: 1.0035524}
 --- !u!114 &524984146
@@ -875,6 +876,28 @@ MonoBehaviour:
   uptime: 0
   laserSpawner: {fileID: 7679618270055052061, guid: d10bd6d410482bc4c83dfbb5903151fd,
     type: 3}
+--- !u!114 &524984148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524984138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63af4b5888004cd4ebbb2b8005652ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movesetNames: []
+  diceSprites:
+  - {fileID: 21300000, guid: 53f810ca94422c64d82e51c71b344c2c, type: 3}
+  - {fileID: 21300000, guid: 01ffb23960684a248937765b5bdbc8d7, type: 3}
+  - {fileID: 21300000, guid: d8a00e8c14b42b548a6be05b76baf665, type: 3}
+  - {fileID: 21300000, guid: 21f942927f6d6f44ab570dea8223160e, type: 3}
+  - {fileID: 21300000, guid: 2c650b24b0cadb7488f9ed6ed5b097e4, type: 3}
+  - {fileID: 21300000, guid: c811c9e0e74a7564796ff8424d305993, type: 3}
+  bounces: 10
+  speed: 15
 --- !u!1001 &551468166
 PrefabInstance:
   m_ObjectHideFlags: 0
