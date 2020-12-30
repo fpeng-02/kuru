@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class TrianglePhaseA : Phase
 {
+    [SerializeField] private GameObject bullet;
+    private PolygonCollider2D polygonCollider;
+    private Rigidbody2D rb2d;
+
     public override IEnumerator beginPhase()
     {
+        rb2d = GetComponent<Rigidbody2D>();
+        polygonCollider = GetComponent<PolygonCollider2D>();
+        polygonCollider.isTrigger = true;
+        polygonCollider.enabled = true;
         this.transform.position = Vector3.zero;
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         //Sprite to triangle
         Debug.Log("Laser should've casted..");
         owner.cast("Tri Laser");
-        this.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 10;
+        rb2d.velocity = Vector2.zero;
+        rb2d.angularVelocity = 10;
         yield return phaseLoop();
     }
     public override IEnumerator phaseLoop()
@@ -21,13 +29,19 @@ public class TrianglePhaseA : Phase
     public override void exitPhase()
     {
         base.exitPhase();
-        this.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
+        rb2d.angularVelocity = 0;
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
-
+        polygonCollider.enabled = false;
+        polygonCollider.isTrigger = false;
     }
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        GameObject go = Instantiate(bullet, this.transform.position, col.transform.rotation);
+        Debug.Log("ouch");
+    }
 }

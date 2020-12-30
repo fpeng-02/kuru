@@ -28,7 +28,7 @@ public abstract class Projectile : MonoBehaviour
         GetComponents<Effect>(effectList);
     }
 
-    void OnTriggerStay2D(Collider2D col)
+    public virtual void OnTriggerStay2D(Collider2D col)
     {
         //
 

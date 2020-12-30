@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 4883826525960857139, guid: 168812d6bf5a06045b140606554b7bf3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4883826525960857139, guid: 168812d6bf5a06045b140606554b7bf3,
         type: 3}
@@ -213,7 +213,7 @@ PrefabInstance:
     - target: {fileID: 406691211427674394, guid: cf4b883885c11274ab4605e9953f2bed,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 406691211427674394, guid: cf4b883885c11274ab4605e9953f2bed,
         type: 3}
@@ -293,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 406691211427674394, guid: cf4b883885c11274ab4605e9953f2bed,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 406691211427674394, guid: cf4b883885c11274ab4605e9953f2bed,
         type: 3}
@@ -378,8 +378,8 @@ GameObject:
   - component: {fileID: 524984141}
   - component: {fileID: 524984147}
   - component: {fileID: 524984140}
-  - component: {fileID: 524984148}
   - component: {fileID: 524984146}
+  - component: {fileID: 524984148}
   - component: {fileID: 524984142}
   m_Layer: 8
   m_Name: Polygon
@@ -575,6 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movesetNames: []
+  bullet: {fileID: 4183228126834300200, guid: 9ba31f872fe658344b25352401a4ce6e, type: 3}
 --- !u!114 &524984147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,9 +712,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1384763622}
+  - {fileID: 331599803}
   - {fileID: 358745620}
   - {fileID: 133820897}
-  - {fileID: 331599803}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
