@@ -23,11 +23,6 @@ public class Polygon : Entity
         phases[currentPhase].init(this);
     }
 
-    public void test()
-    {
-        cast("Meteor Shower");
-    }
-
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();

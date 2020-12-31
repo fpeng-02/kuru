@@ -376,10 +376,12 @@ GameObject:
   - component: {fileID: 524984145}
   - component: {fileID: 524984143}
   - component: {fileID: 524984141}
+  - component: {fileID: 524984151}
   - component: {fileID: 524984147}
   - component: {fileID: 524984140}
   - component: {fileID: 524984149}
   - component: {fileID: 524984150}
+  - component: {fileID: 524984152}
   - component: {fileID: 524984146}
   - component: {fileID: 524984148}
   - component: {fileID: 524984142}
@@ -439,12 +441,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  hitPoints: 750
+  hitPoints: 900
   entityName: Polygon
   phaseThresholds:
   - 800
   - 700
   - 600
+  - 500
   meteorStrikePosition: {x: 0, y: 0, z: 0}
   spawner: {fileID: 0}
   quat: {x: 0, y: 0, z: 0, w: 0}
@@ -652,6 +655,37 @@ MonoBehaviour:
   uptime: 0
   interval: 0.3
   bullet: {fileID: 85314542527309055, guid: 57758ae99e8197c4bba4cfc1fbdc6e2a, type: 3}
+--- !u!114 &524984151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524984138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae503de97b2756841a672dc66af9ce6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Create Bees
+  uptime: 0
+  bee: {fileID: 3170674727176311192, guid: c044cd7be1449cc468ca7adc2d5e70ee, type: 3}
+  count: 6
+--- !u!114 &524984152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524984138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50201f650d29fc24cbb0c5b9b23ca060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movesetNames: []
+  interval: 2
 --- !u!1001 &551468166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1227,24 +1261,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39d5a51a3722cf742a18a883d51c82be, type: 3}
---- !u!1 &1607372844 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5646041454928668909, guid: 39d5a51a3722cf742a18a883d51c82be,
-    type: 3}
-  m_PrefabInstance: {fileID: 1607372843}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1607372845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607372844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923d320ff127ffa4c95b3d1aeb25296a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1770309829 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
