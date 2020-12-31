@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class TBPoundFissure : AbilitySequence
 {
@@ -25,6 +26,7 @@ public class TBPoundFissure : AbilitySequence
 
     public override IEnumerator cast()
     {
+        CameraShaker.Instance.ShakeOnce(15f, 100f, 0.1f, 0.1f);
         // always fire one fissure at the player
         fireFissure(GameObject.Find("Player").transform.position - this.transform.position);
         for (int i = 0; i < additionalFissures; i++) {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class TBPoundPlayerRegion : AbilitySequence
 {
@@ -9,6 +10,7 @@ public class TBPoundPlayerRegion : AbilitySequence
 
     public override IEnumerator cast()
     {
+        CameraShaker.Instance.ShakeOnce(15f, 100f, 0.1f, 0.1f);
         // find player position
         Vector2 playerPos = GameObject.Find("Player").transform.position;
         // overlap circle on the player, trigger warning state on the tiles

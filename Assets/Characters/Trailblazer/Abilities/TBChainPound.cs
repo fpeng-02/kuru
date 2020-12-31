@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class TBChainPound : AbilitySequence
 {
@@ -42,6 +43,7 @@ public class TBChainPound : AbilitySequence
         yield return new WaitForSeconds(jumpDelay);
 
         // do the jump
+        CameraShaker.Instance.ShakeOnce(15f, 100f, 0.1f, 0.1f);
         this.transform.position = new Vector3(jumpPos.x, jumpPos.y, -5);
         float lavaCount = 0;
         float floorCount = 0;
