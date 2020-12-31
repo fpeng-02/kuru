@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 524984147}
   - component: {fileID: 524984140}
   - component: {fileID: 524984149}
+  - component: {fileID: 524984150}
   - component: {fileID: 524984146}
   - component: {fileID: 524984148}
   - component: {fileID: 524984142}
@@ -632,7 +633,24 @@ MonoBehaviour:
   cooldown: 0
   abilityName: Bounce Shotgun
   uptime: 0
-  angleOffset: 30
+  angleOffset: 20
+  bullet: {fileID: 85314542527309055, guid: 57758ae99e8197c4bba4cfc1fbdc6e2a, type: 3}
+--- !u!114 &524984150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524984138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cb0d8a3bdd5cf419897b44423666f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Stop Shotgun
+  uptime: 0
+  interval: 0.3
   bullet: {fileID: 85314542527309055, guid: 57758ae99e8197c4bba4cfc1fbdc6e2a, type: 3}
 --- !u!1001 &551468166
 PrefabInstance:

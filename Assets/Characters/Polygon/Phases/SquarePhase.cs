@@ -18,6 +18,11 @@ public class SquarePhase : Phase
     {
         return rollNumber;
     }
+
+    public Sprite getSprite()
+    {
+        return diceSprites[rollNumber];
+    }
     public override IEnumerator beginPhase()
     {
         // setup
@@ -49,11 +54,17 @@ public class SquarePhase : Phase
             rolling = true;
             rb2d.velocity = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * speed;
             yield return new WaitUntil(() => rolling == false);
+            rb2d.velocity = Vector2.zero;
+            yield return new WaitForSeconds(1.0f);
+
 
             // ATTACK
             // choose what to spawn based on roll number
             // stay still? idk lol
-            yield return new WaitForSeconds(2.0f);
+
+            owner.cast("Stop Shotgun");
+            
+            yield return new WaitForSeconds((0.4f)*(rollNumber+1));
         }
     }
 
