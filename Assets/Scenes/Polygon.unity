@@ -378,6 +378,7 @@ GameObject:
   - component: {fileID: 524984141}
   - component: {fileID: 524984147}
   - component: {fileID: 524984140}
+  - component: {fileID: 524984149}
   - component: {fileID: 524984146}
   - component: {fileID: 524984148}
   - component: {fileID: 524984142}
@@ -437,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  hitPoints: 1000
+  hitPoints: 750
   entityName: Polygon
   phaseThresholds:
   - 800
@@ -616,6 +617,23 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c811c9e0e74a7564796ff8424d305993, type: 3}
   bounces: 10
   speed: 25
+--- !u!114 &524984149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524984138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9385a2d7d1d0a9d449f8af914bbace9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Bounce Shotgun
+  uptime: 0
+  angleOffset: 30
+  bullet: {fileID: 85314542527309055, guid: 57758ae99e8197c4bba4cfc1fbdc6e2a, type: 3}
 --- !u!1001 &551468166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1183,6 +1201,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646041454928668911, guid: 39d5a51a3722cf742a18a883d51c82be,
+        type: 3}
+      propertyPath: orthographic size
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39d5a51a3722cf742a18a883d51c82be, type: 3}

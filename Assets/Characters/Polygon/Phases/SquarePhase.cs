@@ -12,7 +12,7 @@ public class SquarePhase : Phase
     private SpriteRenderer spriteRenderer;
     private int curBounces;
     private bool rolling;
-    private int rollNumber;
+    private int rollNumber = 3;
 
     public int getRollNumber()
     {
@@ -77,12 +77,13 @@ public class SquarePhase : Phase
             rb2d.angularDrag = 5;
             rolling = false;
         }
-        Debug.Log("wall!");
+        owner.cast("Bounce Shotgun");
+
     }
     
     void OnCollisionExit2D()
     {
-        Debug.Log("exit!");
+
     }
 
     void Update()
