@@ -56,8 +56,9 @@ public class PDirectionalLaser : MonoBehaviour
     }
     public Vector3 getLaserDir()
     {
-        Vector3 firePos = (this.transform.parent.transform.rotation * this.transform.rotation) * Vector3.right;
-        RaycastHit2D initHit = Physics2D.Raycast(this.transform.position, firePos, 50.0f, LayerMask.GetMask("Environment"), -100, 100);
+        Vector3 firePos =  ((this.transform.parent.transform.rotation * transform.localRotation) * Vector3.up);
+        RaycastHit2D initHit = Physics2D.Raycast(this.transform.parent.transform.position, firePos, 50.0f, LayerMask.GetMask("Environment"), -100, 100);
+
         return initHit.point;
     }
 

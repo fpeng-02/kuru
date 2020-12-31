@@ -14,6 +14,10 @@ public class SquarePhase : Phase
     private bool rolling;
     private int rollNumber;
 
+    public int getRollNumber()
+    {
+        return rollNumber;
+    }
     public override IEnumerator beginPhase()
     {
         // setup
@@ -75,9 +79,17 @@ public class SquarePhase : Phase
         }
         Debug.Log("wall!");
     }
-
+    
     void OnCollisionExit2D()
     {
         Debug.Log("exit!");
+    }
+
+    void Update()
+    {
+        if (rolling && rb2d.velocity.magnitude <= 1)
+        {
+            rolling = false;
+        }
     }
 }

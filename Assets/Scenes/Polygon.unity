@@ -436,11 +436,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d01e2a12dc2c949bb97ea828607fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
   hitPoints: 1000
   entityName: Polygon
   phaseThresholds:
   - 800
+  - 700
   - 600
   meteorStrikePosition: {x: 0, y: 0, z: 0}
   spawner: {fileID: 0}
@@ -614,7 +615,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2c650b24b0cadb7488f9ed6ed5b097e4, type: 3}
   - {fileID: 21300000, guid: c811c9e0e74a7564796ff8424d305993, type: 3}
   bounces: 10
-  speed: 15
+  speed: 25
 --- !u!1001 &551468166
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class TrianglePhaseA : Phase
         //Sprite to triangle
         owner.cast("Tri Laser");
         rb2d.velocity = Vector2.zero;
-        rb2d.angularVelocity = 30;
+        rb2d.angularVelocity = 10;
         yield return phaseLoop();
     }
 
