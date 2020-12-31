@@ -7,6 +7,9 @@ public class TrianglePhaseA : Phase
     [SerializeField] private GameObject bullet;
     private PolygonCollider2D polygonCollider;
     private Rigidbody2D rb2d;
+    private float[] prismOffsets = { -30, -20, -10, 0, 10, 20, 30 };
+    private Color[] prismColors = { Color.red, new Color(1f, 0.64f, 0f) , Color.yellow, Color.green, Color.blue, new Color(0.29f, 0f, 0.51f), Color.magenta };
+    private int prismCounter = 0;
 
     public override IEnumerator beginPhase()
     {
@@ -18,7 +21,7 @@ public class TrianglePhaseA : Phase
         //Sprite to triangle
         owner.cast("Tri Laser");
         rb2d.velocity = Vector2.zero;
-        rb2d.angularVelocity = 10;
+        rb2d.angularVelocity = 30;
         yield return phaseLoop();
     }
 
@@ -44,8 +47,13 @@ public class TrianglePhaseA : Phase
     {
         if (getPhaseActive()) {
             if (col.transform.gameObject.layer != LayerMask.NameToLayer("Boss")) {
-                GameObject go = Instantiate(bullet, this.transform.position, col.transform.rotation);
+                GameObject go = Instantiate(bullet, this.transform.position, Quaternion.Euler(0, 0, col.transform.eulerAngles.z + prismOffsets[prismCounter]));
+                go.GetComponent<SpriteRenderer>().color = prismColors[prismCounter];
                 Debug.Log("ouch");
+                prismCounter++;
+                if (prismCounter == 7) {
+                    prismCounter = 0;
+                }
             }
         }
     }

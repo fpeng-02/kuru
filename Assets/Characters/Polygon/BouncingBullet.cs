@@ -21,9 +21,9 @@ public class BouncingBullet : MonoBehaviour
         // move the bullet
         rb2d.MovePosition(rb2d.transform.position + this.transform.rotation * Vector3.right * speed * Time.deltaTime);
         // raycast ahead of the bullet to see if it hits anything
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, this.transform.rotation * Vector2.right, Time.deltaTime * speed + 0.1f, LayerMask.GetMask("Environment", "Player", "Entity"));
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, this.transform.rotation * Vector2.right, Time.deltaTime * speed + 0.2f, LayerMask.GetMask("Environment", "Player", "Entity"));
         if (hit.collider != null && hit.transform != this.transform) {
-            // if it hits a wall, bounce
+            // if it hits a wall, bounce. if it bounced enough, destroy
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Environment")) {
                 Vector2 reflectDir = Vector2.Reflect(this.transform.rotation * Vector2.right, hit.normal);
                 float rot = Mathf.Atan2(reflectDir.y, reflectDir.x) * Mathf.Rad2Deg;
