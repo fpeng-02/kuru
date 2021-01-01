@@ -22,6 +22,9 @@ public abstract class Phase : MonoBehaviour
     public abstract IEnumerator phaseLoop();  // phaseLoop will have an inf loop; next phase will interrupt it with StopAllCoroutines
     public virtual void exitPhase()
     {
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("BossProjectile")) {
+            Destroy(go);
+        }
         setPhaseActive(false);
         StopAllCoroutines();
     }
