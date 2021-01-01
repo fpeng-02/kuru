@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21621f6926749b347a5d140010dde36d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRadius: 7
+  maxRadius: 10
   expansionSpeed: 0.01
   thickness: 0.3
 --- !u!114 &8345308370909450791

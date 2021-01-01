@@ -57,8 +57,8 @@ public class ExpandingRing : MonoBehaviour
         float z = 0f;
         float angle = 0f;
         for (int i = 0; i < (resolution + 1); i++) {
-            x = Mathf.Cos(Mathf.Deg2Rad * angle) * radius * 2;
-            y = Mathf.Sin(Mathf.Deg2Rad * angle) * radius * 2;
+            x = Mathf.Cos(Mathf.Deg2Rad * angle) * radius;
+            y = Mathf.Sin(Mathf.Deg2Rad * angle) * radius;
             lineRenderer.SetPosition(i, this.transform.position + new Vector3(x, y, z));
             angle += (360f / resolution);
         }
