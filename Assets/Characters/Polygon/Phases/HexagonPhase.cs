@@ -6,7 +6,7 @@ public class HexagonPhase : Phase
 {
     [SerializeField] private float interval;
     [SerializeField] private float dashSpeed;
-    [SerializeField] private Rigidbody2D rb2d;
+    private Rigidbody2D rb2d;
 
     public override IEnumerator beginPhase()
     {

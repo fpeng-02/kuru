@@ -689,6 +689,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movesetNames: []
   interval: 2
+  dashSpeed: 20
+  rb2d: {fileID: 0}
 --- !u!114 &524984153
 MonoBehaviour:
   m_ObjectHideFlags: 0
