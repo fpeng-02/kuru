@@ -440,8 +440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d01e2a12dc2c949bb97ea828607fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  hitPoints: 900
+  speed: 0
+  hitPoints: 1000
   entityName: Polygon
   phaseThresholds:
   - 800
@@ -686,6 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movesetNames: []
   interval: 2
+  dashSpeed: 20
 --- !u!1001 &551468166
 PrefabInstance:
   m_ObjectHideFlags: 0

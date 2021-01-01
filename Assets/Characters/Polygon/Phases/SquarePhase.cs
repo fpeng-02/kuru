@@ -57,11 +57,9 @@ public class SquarePhase : Phase
             rb2d.velocity = Vector2.zero;
             yield return new WaitForSeconds(1.0f);
 
-
             // ATTACK
             // choose what to spawn based on roll number
             // stay still? idk lol
-
             owner.cast("Stop Shotgun");
             
             yield return new WaitForSeconds((0.4f)*(rollNumber+1));
@@ -80,16 +78,17 @@ public class SquarePhase : Phase
 
     void OnCollisionEnter2D()
     {
-        rollNumber = Random.Range(0, 6);
-        spriteRenderer.sprite = diceSprites[rollNumber];
-        curBounces++;
-        if (curBounces == bounces) {
-            rb2d.drag = 5;
-            rb2d.angularDrag = 5;
-            rolling = false;
+        if (getPhaseActive()) {
+            rollNumber = Random.Range(0, 6);
+            spriteRenderer.sprite = diceSprites[rollNumber];
+            curBounces++;
+            if (curBounces == bounces) {
+                rb2d.drag = 5;
+                rb2d.angularDrag = 5;
+                rolling = false;
+            }
+            owner.cast("Bounce Shotgun");
         }
-        owner.cast("Bounce Shotgun");
-
     }
     
     void OnCollisionExit2D()

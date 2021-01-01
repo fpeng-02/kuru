@@ -9,6 +9,10 @@ public class Polygon : Entity
     private int currentPhase;
     private Rigidbody2D rb2d;
 
+    // specific for the hexagon phase
+    private bool dashing;
+    public void setDashing(bool dashing) { this.dashing = dashing; }
+
     // specific for the pentagon phase
     private bool falling;
     public Vector3 meteorStrikePosition;
@@ -40,8 +44,11 @@ public class Polygon : Entity
 
     public void FixedUpdate()
     {
-        if (falling) {
+        if (dashing || falling) {
             rb2d.MovePosition(rb2d.transform.position + quat * Vector3.right * speed * Time.deltaTime);
+        }
+
+        if (falling) {
             if ((this.transform.position - meteorStrikePosition).magnitude < 0.1) {
                 if (spawner != null) Destroy(spawner);
                 falling = false;
