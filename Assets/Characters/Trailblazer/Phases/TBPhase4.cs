@@ -48,6 +48,7 @@ public class TBPhase4 : Phase
         active = false;
         timer.SetActive(false);
         owner.setInvulnerable(false);
+        owner.setHitPointsBypass(owner.getHitPoints() - 10);
     }
 
     void Update()
