@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRadius: 10
-  expansionSpeed: 0.01
+  expansionSpeed: 0.1
   thickness: 0.3
 --- !u!114 &8345308370909450791
 MonoBehaviour:
