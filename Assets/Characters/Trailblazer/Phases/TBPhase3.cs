@@ -69,7 +69,7 @@ public class TBPhase3 : Phase
 
     public override void exitPhase()
     {
-        StopAllCoroutines();
+        base.exitPhase();
         GetComponent<LineRenderer>().enabled = false;
     }
 }

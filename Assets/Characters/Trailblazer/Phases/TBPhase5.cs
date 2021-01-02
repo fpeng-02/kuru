@@ -33,6 +33,6 @@ public class TBPhase5 : Phase
 
     public override void exitPhase()
     {
-        StopAllCoroutines();
+        base.exitPhase();
     }
 }

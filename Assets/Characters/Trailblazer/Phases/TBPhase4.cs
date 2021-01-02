@@ -44,9 +44,9 @@ public class TBPhase4 : Phase
 
     public override void exitPhase()
     {
+        base.exitPhase();
         active = false;
         timer.SetActive(false);
-        StopAllCoroutines();
         owner.setInvulnerable(false);
     }
 
