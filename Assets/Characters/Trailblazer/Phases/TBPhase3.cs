@@ -15,7 +15,9 @@ public class TBPhase3 : Phase
 
     public override IEnumerator beginPhase()
     {
+
         player = GameObject.Find("Player");
+        player.transform.position = new Vector3(0, 0, 0);
         // choose the islands that aren't going to be permanently destroyed
         List<FloorTile> safeTiles = new List<FloorTile>();
         ContactFilter2D cf = new ContactFilter2D();
