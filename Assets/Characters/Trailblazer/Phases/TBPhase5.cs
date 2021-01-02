@@ -30,9 +30,4 @@ public class TBPhase5 : Phase
             // laser!!
         }
     }
-
-    public override void exitPhase()
-    {
-        base.exitPhase();
-    }
 }
