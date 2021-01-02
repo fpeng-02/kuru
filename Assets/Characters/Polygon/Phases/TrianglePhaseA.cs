@@ -10,9 +10,13 @@ public class TrianglePhaseA : Phase
     private float[] prismOffsets = { -30, -20, -10, 0, 10, 20, 30 };
     private Color[] prismColors = { Color.red, new Color(1f, 0.64f, 0f) , Color.yellow, Color.green, Color.blue, new Color(0.29f, 0f, 0.51f), Color.magenta };
     private int prismCounter = 0;
+    [SerializeField] private Sprite triangleSprite;
+
 
     public override IEnumerator beginPhase()
     {
+        GetComponent<SpriteRenderer>().sprite = triangleSprite;
+
         rb2d = GetComponent<Rigidbody2D>();
         polygonCollider = GetComponent<PolygonCollider2D>();
         polygonCollider.isTrigger = true;

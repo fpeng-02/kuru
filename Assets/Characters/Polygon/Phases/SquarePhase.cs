@@ -14,6 +14,7 @@ public class SquarePhase : Phase
     private bool rolling;
     private int rollNumber = 3;
 
+
     public int getRollNumber()
     {
         return rollNumber;

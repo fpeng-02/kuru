@@ -7,12 +7,16 @@ public class HexagonPhase : Phase
     [SerializeField] private float interval;
     [SerializeField] private float dashSpeed;
     private Rigidbody2D rb2d;
+    [SerializeField] private Sprite hexagonSprite;
+
 
     public override IEnumerator beginPhase()
     {
+        GetComponent<SpriteRenderer>().sprite = hexagonSprite;
         rb2d = GetComponent<Rigidbody2D>();
         this.transform.position = Vector3.zero;
         yield return phaseLoop();
+        rb2d.freezeRotation = true;
     }
 
     public override IEnumerator phaseLoop()
@@ -29,5 +33,10 @@ public class HexagonPhase : Phase
             owner.cast("Create Bees");
             yield return new WaitForSeconds(interval);
         }
+    }
+    public override void exitPhase()
+    {
+        base.exitPhase();
+        rb2d.freezeRotation = false;
     }
 }
