@@ -5,8 +5,11 @@ using UnityEngine;
 public class FallingStrike : MonoBehaviour
 {
     [SerializeField] private GameObject fallingObjectPrefab;
+    [SerializeField] private GameObject bossPlaceholder;
+
     [SerializeField] private float impactDelay;
-    private Collider2D fallingObjectCollider;
+    [SerializeField] private float damageInterval;
+
     private GameObject fallingObject;
     private Entity caster;
     private SpriteRenderer spriteRenderer;
@@ -14,20 +17,23 @@ public class FallingStrike : MonoBehaviour
     [SerializeField] private Sprite meteorWarning;
     [SerializeField] private Sprite bossWarning;
 
+
     public void setCaster(Entity caster) { this.caster = caster; }
 
-    public void boss(GameObject boss)
+    public IEnumerator bossStrike()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         this.spriteRenderer.sprite = bossWarning;
         // should we do something where we spawn in a dummy sprite of the boss instead of moving the boss directly?
-        boss.transform.position = this.transform.position + new Vector3(-10f, 10f, 0f);
-        Polygon polygonBoss = boss.GetComponent<Polygon>();
-        polygonBoss.setFalling(true);
-        polygonBoss.quat = Quaternion.Euler(0, 0, -45);
-        polygonBoss.meteorStrikePosition = this.transform.position;
-        polygonBoss.setSpeed(15);
-        polygonBoss.spawner = this.gameObject;
+        GameObject bossPlaceHolder = Instantiate(bossPlaceholder, this.transform.position + new Vector3(-10f, 10f, 0f), Quaternion.Euler(0,0,0));
+        BossPlaceholder polygonBoss = bossPlaceHolder.GetComponent<BossPlaceholder>();
+        polygonBoss.startPos = this.transform.position + new Vector3(-10f, 10f, 0f);
+        polygonBoss.endPos = transform.position;
+        polygonBoss.timeToDestination = impactDelay;
+        yield return new WaitForSeconds(impactDelay);
+        spriteRenderer.sprite = null;
+        yield return new WaitForSeconds(damageInterval);
+        GameObject.FindGameObjectWithTag("Boss").transform.position = new Vector3(-20f, -20f, 0);
     }
 
     public void meteor()

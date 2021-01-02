@@ -12,13 +12,8 @@ public class Polygon : Entity
     // specific for the hexagon phase
     private bool dashing;
     public void setDashing(bool dashing) { this.dashing = dashing; }
-
-    // specific for the pentagon phase
-    private bool falling;
-    public Vector3 meteorStrikePosition;
-    public GameObject spawner;
-    public void setFalling(bool falling) { this.falling = falling; }
     public Quaternion quat;
+
 
     public void nextPhase()
     {
@@ -44,15 +39,8 @@ public class Polygon : Entity
 
     public void FixedUpdate()
     {
-        if (dashing || falling) {
+        if (dashing) {
             rb2d.MovePosition(rb2d.transform.position + quat * Vector3.right * speed * Time.deltaTime);
-        }
-
-        if (falling) {
-            if ((this.transform.position - meteorStrikePosition).magnitude < 0.1) {
-                if (spawner != null) Destroy(spawner);
-                falling = false;
-            }
         }
     }
 }
