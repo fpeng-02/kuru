@@ -14,6 +14,9 @@ public class TBPhase1 : Phase
 
     public override IEnumerator beginPhase()
     {
+        owner.setInvulnerable(true);
+        yield return new WaitForSeconds(3.0f);
+        owner.setInvulnerable(false);
         // animations maybe
         yield return phaseLoop();
     }
