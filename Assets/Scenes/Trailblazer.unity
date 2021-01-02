@@ -39247,18 +39247,68 @@ PrefabInstance:
       objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
+      propertyPath: m_Parameters.colorGradient.ctime0
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
       propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.m_NumColorKeys
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
@@ -39382,11 +39432,6 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 88678718}
-    - target: {fileID: 6917911427879531957, guid: 934248ab176e2974ba0d269ba3927bae,
-        type: 3}
-      propertyPath: survivalTime
-      value: 30
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 934248ab176e2974ba0d269ba3927bae, type: 3}
 --- !u!1001 &5646041454869772589

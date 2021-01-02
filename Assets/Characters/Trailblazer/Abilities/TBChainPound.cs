@@ -59,6 +59,7 @@ public class TBChainPound : AbilitySequence
         }
 
         // actual jump
+        caster.cast("Landing Hit");
         CameraShaker.Instance.ShakeOnce(15f, 100f, 0.1f, 0.1f);
         this.transform.position = new Vector3(jumpPos.x, jumpPos.y, -5);
         float lavaCount = 0;
@@ -74,8 +75,9 @@ public class TBChainPound : AbilitySequence
         }
         // if enough tiles were knocked out, damage the boss
         if ( lavaCount / (lavaCount + floorCount) > fractionHitForDamage) {
+            caster.cast("Final Rage Ring");
             wasHit = true;
-            caster.cast("Ring"); // maybe replace with "rage" one idk
+             // maybe replace with "rage" one idk
             foreach (FloorTile tile in toWarn) {
                 tile.setHighlight(false);
                 FloorState tileState = tile.getState();
@@ -85,9 +87,9 @@ public class TBChainPound : AbilitySequence
                     tile.setExtendedLava();
                 }
             }
-            caster.setHitPointsBypass(caster.getHitPoints() - 40);
+            caster.setHitPointsBypass(caster.getHitPoints() - 30);
         } else {
-            caster.cast("Ring");
+            caster.cast("Final Phase Ring");
             foreach (FloorTile tile in toWarn) {
                 tile.setHighlight(false);
                 FloorState tileState = tile.getState();

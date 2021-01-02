@@ -22,8 +22,11 @@ GameObject:
   - component: {fileID: 7898555137311368260}
   - component: {fileID: 6596433360695609224}
   - component: {fileID: 453729271492370565}
+  - component: {fileID: 4658141600804057388}
   - component: {fileID: 2079556390957149346}
   - component: {fileID: 4501364481895947956}
+  - component: {fileID: 5119076572584162051}
+  - component: {fileID: 2481457576751017307}
   - component: {fileID: 4302413235245228805}
   - component: {fileID: 4302413235245228802}
   - component: {fileID: 8305824395973354505}
@@ -418,7 +421,28 @@ MonoBehaviour:
   xLowerBound: -5
   yLowerBound: -5
   radius: 1
-  fractionHitForDamage: 0.1
+  landingTime: 0
+  leavingTime: 0
+  ouchTime: 0
+  fractionHitForDamage: 0.8
+--- !u!114 &4658141600804057388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302413235245228924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f773950e6c7d0ea40a09e456d75e3b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Landing Hit
+  uptime: 0
+  meleeHitbox: {fileID: 4130147154999601092, guid: 47780ca822622124b9cacd5f894437a0,
+    type: 3}
+  spawnDistance: 0
 --- !u!114 &2079556390957149346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +475,38 @@ MonoBehaviour:
   abilityName: Ring
   uptime: 0
   ring: {fileID: 0}
+--- !u!114 &5119076572584162051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302413235245228924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949da6ecebeb3724b89c24171f1af967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Final Phase Ring
+  uptime: 0
+  ring: {fileID: 3608834227989610253, guid: 5f858ec2593c2c94f82e302d73a68b8a, type: 3}
+--- !u!114 &2481457576751017307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302413235245228924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5ab874fa4eea74cae3e8c194626109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  abilityName: Final Rage Ring
+  uptime: 0
+  ring: {fileID: 357568007499848179, guid: 9cd7d24767335714b844794c18609e30, type: 3}
 --- !u!114 &4302413235245228805
 MonoBehaviour:
   m_ObjectHideFlags: 0

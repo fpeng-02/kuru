@@ -12,6 +12,7 @@ public class TBPhase3 : Phase
     [SerializeField] private float islandSide; 
     private List<Collider2D> toSet = new List<Collider2D>();
     private GameObject player;
+    private List<List<FloorTile>> islandTilesList = new List<List<FloorTile>>();
 
     public override IEnumerator beginPhase()
     {
@@ -24,13 +25,17 @@ public class TBPhase3 : Phase
         cf.layerMask = LayerMask.GetMask("FloorTile");
         cf.useLayerMask = true;
         cf.useTriggers = true;
-        foreach (Vector2 center in islandCenters) {
-            //Physics2D.OverlapCircle(center, islandRadius, cf, toSet);
-            Physics2D.OverlapBox(center, new Vector2(islandSide, islandSide), 0.0f, cf, toSet);
 
+        // for each island center, unmark it as destroyed and then store the tiles for each island
+        foreach (Vector2 center in islandCenters) {
+            List<FloorTile> island = new List<FloorTile>();
+            island.Clear();
+            Physics2D.OverlapBox(center, new Vector2(islandSide, islandSide), 0.0f, cf, toSet);
             foreach (Collider2D col in toSet) {
                 safeTiles.Add(col.gameObject.GetComponent<FloorTile>());
+                island.Add(col.gameObject.GetComponent<FloorTile>());
             }
+            islandTilesList.Add(island);
         }
 
         // mark the whole floor for permanent destruction, then interrupt the states of the island tiles
@@ -45,13 +50,12 @@ public class TBPhase3 : Phase
             tile.setPermanentDisable(false);
             tile.setFloor();
         }
+
         //Pause and teleport to a random spot on the edge while invincible
         owner.setInvulnerable(true);
         this.transform.position = new Vector3(-5, 0, 0);
         yield return new WaitForSeconds(interval);
         owner.setInvulnerable(false);
-
-        
 
         yield return phaseLoop();
     }
@@ -59,11 +63,15 @@ public class TBPhase3 : Phase
     public override IEnumerator phaseLoop()
     {
         while (true) {
-            // delay
+            // horizontal/vertical laser
             owner.cast(movesetNames[Random.Range(0, movesetNames.Count)]);
+            // also sink a random island
+            foreach (FloorTile tile in islandTilesList[Random.Range(0, islandTilesList.Count)]) {
+                tile.StopAllCoroutines();
+                tile.setWarning();
+            }
             yield return new WaitForSeconds(interval);
-            // laser!!
-            
+            // laser!!   
         }
     }
 
