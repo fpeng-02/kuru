@@ -64,7 +64,7 @@ public class ExpandingRing : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (radius < maxRadius) {
             circleCollider.radius = radius;
