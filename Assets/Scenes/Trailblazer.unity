@@ -1036,7 +1036,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1507144771
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -38936,8 +38936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
-  DefaultRotInfluence: {x: 1, y: 1, z: 1}
+  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0}
+  DefaultRotInfluence: {x: 0, y: 0, z: 1}
   RestPositionOffset: {x: 0, y: 0, z: 0}
   RestRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &1947541651 stripped
@@ -39057,7 +39057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078462923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1658544131}
@@ -39240,6 +39240,36 @@ PrefabInstance:
       propertyPath: fractionHitForDamage
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 769764509580032975, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228920, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: m_Sprite
@@ -39259,7 +39289,7 @@ PrefabInstance:
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: hitPoints
-      value: 1500
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
@@ -39399,17 +39429,17 @@ PrefabInstance:
     - target: {fileID: 5646041454928668910, guid: 39d5a51a3722cf742a18a883d51c82be,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.62928766
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5646041454928668910, guid: 39d5a51a3722cf742a18a883d51c82be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9065847
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5646041454928668910, guid: 39d5a51a3722cf742a18a883d51c82be,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.8970132
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5646041454928668910, guid: 39d5a51a3722cf742a18a883d51c82be,
         type: 3}
