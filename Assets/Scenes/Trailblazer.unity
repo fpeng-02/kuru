@@ -1098,6 +1098,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6614510994198454442, guid: 002353491c652c9489c6743957d9bd4f,
+        type: 3}
+      propertyPath: hitPoints
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6614510994198454444, guid: 002353491c652c9489c6743957d9bd4f,
         type: 3}
       propertyPath: m_Name
@@ -1335,22 +1340,22 @@ PrefabInstance:
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: hitPoints
-      value: 1000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: phaseThresholds.Array.data[0]
-      value: 800
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: phaseThresholds.Array.data[1]
-      value: 600
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: phaseThresholds.Array.data[2]
-      value: 400
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228923, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
@@ -1370,12 +1375,12 @@ PrefabInstance:
     - target: {fileID: 4302413235245228925, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228925, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4302413235245228925, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
