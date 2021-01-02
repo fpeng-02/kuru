@@ -9,6 +9,7 @@ public class PentagonPhase : Phase
 
     public override IEnumerator beginPhase()
     {
+        this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         GetComponent<SpriteRenderer>().sprite = pentagonSprite;
         // ignore collisions between the boss and the wall for this phases since the boss comes through the walls 
         // the boss doesn't move in this phase, so it won't like clip through a wall by walking or something
@@ -26,7 +27,8 @@ public class PentagonPhase : Phase
 
     public override void exitPhase()
     {
-        StopAllCoroutines();
+        base.exitPhase();
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Boss"), LayerMask.NameToLayer("Environment"), false);
+        owner.transform.position = new Vector3(0, 0, 0);
     }
 }

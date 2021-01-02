@@ -24,7 +24,7 @@ public class PMeteorShower : AbilitySequence
         }
         go = (GameObject)Instantiate(strike, new Vector3(Random.Range(xLowerBound, xUpperBound), Random.Range(yLowerBound, yUpperBound), 0f), Quaternion.identity);
         go.GetComponent<FallingStrike>().setCaster(caster);
-        go.GetComponent<FallingStrike>().boss(this.gameObject);
+        go.GetComponent<FallingStrike>().StartCoroutine("bossStrike");
         yield return new WaitForSeconds(meteorInterval);
     }
 }

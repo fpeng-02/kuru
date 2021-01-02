@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 524984154}
   m_Layer: 8
   m_Name: Polygon
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,7 +402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524984138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.52, y: -2.18, z: 0}
+  m_LocalPosition: {x: -2.04, y: -1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -428,8 +428,8 @@ MonoBehaviour:
   xLowerBound: -5
   yUpperBound: 5
   yLowerBound: -5
-  count: 5
-  meteorInterval: 0.2
+  count: 7
+  meteorInterval: 0.3
 --- !u!114 &524984141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  hitPoints: 2000
+  hitPoints: 1400
   entityName: Polygon
   phaseThresholds:
   - 1600
@@ -451,8 +451,6 @@ MonoBehaviour:
   - 800
   - 400
   - 0
-  meteorStrikePosition: {x: 0, y: 0, z: 0}
-  spawner: {fileID: 0}
   quat: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &524984142
 MonoBehaviour:
@@ -467,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movesetNames: []
-  interval: 5
+  interval: 7
   pentagonSprite: {fileID: 21300000, guid: f9bc3adcfadcec549bc92c7bfba97500, type: 3}
 --- !u!50 &524984143
 Rigidbody2D:
@@ -585,6 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movesetNames: []
   bullet: {fileID: 4183228126834300200, guid: 9ba31f872fe658344b25352401a4ce6e, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 1cc9241aa0a6fb14ea17ad86c8d6c32c, type: 3}
 --- !u!114 &524984147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,6 +689,7 @@ MonoBehaviour:
   movesetNames: []
   interval: 2
   dashSpeed: 20
+  hexagonSprite: {fileID: 21300000, guid: 69d6fc7fe9ec14140bf77b94468b16fd, type: 3}
 --- !u!114 &524984153
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,7 +16,6 @@ public class TrianglePhaseA : Phase
     public override IEnumerator beginPhase()
     {
         GetComponent<SpriteRenderer>().sprite = triangleSprite;
-
         rb2d = GetComponent<Rigidbody2D>();
         polygonCollider = GetComponent<PolygonCollider2D>();
         polygonCollider.isTrigger = true;
