@@ -12,12 +12,17 @@ public class TBChainPound : AbilitySequence
     [SerializeField] private float yLowerBound;
     //private List<Collider2D> toWarn = new List<Collider2D>();
     [SerializeField] private float radius;
+    [SerializeField] private float landingTime;
+    [SerializeField] private float leavingTime;
+    [SerializeField] private float ouchTime;
     [SerializeField] private float fractionHitForDamage;
-
+    private float t;
+    private bool wasHit;
 
     public override IEnumerator cast()
     {
-        //List<Collider2D> toWarn = new List<Collider2D>();
+        wasHit = false;
+
         List<FloorTile> toWarn = new List<FloorTile>();
 
         // get the jump position
@@ -34,7 +39,6 @@ public class TBChainPound : AbilitySequence
         {
             FloorTile tile = col.GetComponent<FloorTile>();
             toWarn.Add(tile);
-            //tile.StopAllCoroutines();
             tile.setHighlight(true);
             if (tile.getState() == FloorState.Floor) {
                 tile.setFloor();
@@ -42,7 +46,19 @@ public class TBChainPound : AbilitySequence
         }
         yield return new WaitForSeconds(jumpDelay);
 
-        // do the jump
+        // landing animation
+        // teleport the boss outside the screen first
+        caster.transform.position = (Vector3)jumpPos + new Vector3(-20, 20, 0);
+        // move him in
+        Vector2 currentPos = caster.transform.position;
+        t = 0f;
+        while (t < 1) {
+            t += Time.deltaTime / landingTime;
+            transform.position = Vector2.Lerp(currentPos, jumpPos, t);
+            yield return null;
+        }
+
+        // actual jump
         CameraShaker.Instance.ShakeOnce(15f, 100f, 0.1f, 0.1f);
         this.transform.position = new Vector3(jumpPos.x, jumpPos.y, -5);
         float lavaCount = 0;
@@ -58,6 +74,7 @@ public class TBChainPound : AbilitySequence
         }
         // if enough tiles were knocked out, damage the boss
         if ( lavaCount / (lavaCount + floorCount) > fractionHitForDamage) {
+            wasHit = true;
             caster.cast("Ring"); // maybe replace with "rage" one idk
             foreach (FloorTile tile in toWarn) {
                 tile.setHighlight(false);
@@ -77,11 +94,29 @@ public class TBChainPound : AbilitySequence
                 tile.setWarning();
             }
         }
-        
+
+        // leaving animation: if hit, do a little shake first then actually leave
+        if (wasHit) {
+            currentPos = caster.transform.position;
+            Vector2 ouchPos = caster.transform.position + new Vector3(0, 1f, 0);
+            t = 0f;
+            while (t < 1) {
+                t += Time.deltaTime / ouchTime;
+                transform.position = Vector2.Lerp(currentPos, ouchPos, t);
+                this.transform.rotation = Quaternion.Euler(0, 0, this.transform.eulerAngles.z + 15);
+                yield return null;
+            }
+        }
+        this.transform.rotation = Quaternion.identity;
+        Vector2 leavingPos = caster.transform.position + new Vector3(20, 20, 0);
+        // move him out
+        currentPos = caster.transform.position;
+        t = 0f;
+        while (t < 1) {
+            t += Time.deltaTime / leavingTime;
+            transform.position = Vector2.Lerp(currentPos, leavingPos, t);
+            yield return null;
+        }
         yield return null;
-
-
     }
-
-
 }

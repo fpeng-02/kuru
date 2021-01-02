@@ -7,6 +7,7 @@ public class TBPhase5 : Phase
     [SerializeField] private float interval;
     public override IEnumerator beginPhase()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Boss"), LayerMask.NameToLayer("Environment"), true);  // "animation" passes the boss through walls
         //Introduction cutscene
         owner.setInvulnerable(true);
         // set all tiles to non-permanent and back to floor

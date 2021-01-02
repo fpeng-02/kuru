@@ -39217,6 +39217,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 453729271492370565, guid: 934248ab176e2974ba0d269ba3927bae,
         type: 3}
+      propertyPath: ouchTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 453729271492370565, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: jumpDelay
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 453729271492370565, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: landingTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 453729271492370565, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
+      propertyPath: leavingTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 453729271492370565, guid: 934248ab176e2974ba0d269ba3927bae,
+        type: 3}
       propertyPath: fractionHitForDamage
       value: 0.3
       objectReference: {fileID: 0}
