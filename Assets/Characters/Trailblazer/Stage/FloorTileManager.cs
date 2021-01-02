@@ -22,6 +22,7 @@ public class FloorTileManager : MonoBehaviour
             {
                 GameObject go = (GameObject)Instantiate(tile, new Vector3(hor, ver, 2), Quaternion.Euler(0,0,0), this.transform);
                 allTiles.Add(go.GetComponent<FloorTile>());
+                go.GetComponent<FloorTile>().setOriginalPos(new Vector3(hor, ver, 2));
             }
         }
     }

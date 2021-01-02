@@ -103,6 +103,8 @@ MonoBehaviour:
   warningTime: 1
   lavaTime: 2
   permanentDisable: 0
+  jitterMagnitude: 0.04
+  jitterInterval: 0.05
 --- !u!61 &6317487428802224905
 BoxCollider2D:
   m_ObjectHideFlags: 0
