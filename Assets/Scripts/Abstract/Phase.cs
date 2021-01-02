@@ -26,6 +26,7 @@ public abstract class Phase : MonoBehaviour
             Destroy(go);
         }
         setPhaseActive(false);
+        owner.StopAllCoroutines();
         StopAllCoroutines();
     }
 }

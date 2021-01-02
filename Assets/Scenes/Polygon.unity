@@ -382,11 +382,11 @@ GameObject:
   - component: {fileID: 524984140}
   - component: {fileID: 524984149}
   - component: {fileID: 524984150}
+  - component: {fileID: 524984154}
   - component: {fileID: 524984152}
   - component: {fileID: 524984142}
   - component: {fileID: 524984148}
   - component: {fileID: 524984146}
-  - component: {fileID: 524984154}
   m_Layer: 8
   m_Name: Polygon
   m_TagString: Boss
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  hitPoints: 1400
+  hitPoints: 1800
   entityName: Polygon
   phaseThresholds:
   - 1600
