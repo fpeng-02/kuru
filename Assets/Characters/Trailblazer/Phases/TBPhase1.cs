@@ -25,7 +25,6 @@ public class TBPhase1 : Phase
     public override IEnumerator beginPhase()
     {
         player = GameObject.Find("Player");
-        //player.SetActive(false);
         owner.setInvulnerable(true);
         yield return new WaitForEndOfFrame(); // apparently the tile sprites don't work if there isn't a small delay here
 
@@ -46,11 +45,10 @@ public class TBPhase1 : Phase
             beginTiles.Add(tile);
         }
 
-        // teleport the player to the center. player should trigger the tiles. tiles should stay on warning until the player moves out; that's when the real fight starts
-        //player.SetActive(true);
+        // teleport the player to the center.
         player.transform.position = Vector3.zero;
 
-        // wait until the player moves out of the initial box, then begin the phase
+        // wait until the player moves out of the initial box, then begin the fight
         yield return new WaitUntil(() => playerExitedBeginBox());
         foreach (FloorTile tile in beginTiles) {
             tile.StopAllCoroutines();
