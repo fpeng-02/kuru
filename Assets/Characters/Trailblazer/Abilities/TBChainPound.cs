@@ -87,7 +87,7 @@ public class TBChainPound : AbilitySequence
                     tile.setExtendedLava();
                 }
             }
-            caster.setHitPointsBypass(caster.getHitPoints() - 30);
+            caster.setHitPointsBypass(caster.getHitPoints() - 40);
         } else {
             caster.cast("Final Phase Ring");
             foreach (FloorTile tile in toWarn) {

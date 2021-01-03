@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectName: 
   effectDescription: 
-  damage: 20
+  damage: 10
 --- !u!58 &2998657178806481977
 CircleCollider2D:
   m_ObjectHideFlags: 0
