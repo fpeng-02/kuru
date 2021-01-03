@@ -16,7 +16,6 @@ public class HexagonPhase : Phase
         rb2d = GetComponent<Rigidbody2D>();
         this.transform.position = Vector3.zero;
         yield return phaseLoop();
-        rb2d.freezeRotation = true;
         rb2d.angularDrag = 25;
     }
 
