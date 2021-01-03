@@ -7,19 +7,19 @@ public class TBPhase4 : Phase
 {
     [SerializeField] private float survivalTime;
     [SerializeField] private float interval;
-    [SerializeField] private GameObject timer; // might be a cooler GameObject if we make the timer actually look good 
-    private Text timerText;
+    [SerializeField] private GameObject timer;
+    [SerializeField] private Image timerContent;
     private bool active = false;
+    private float totalSurvivalTime;
 
     public override IEnumerator beginPhase()
     {
-        timerText = timer.GetComponent<Text>();
+        totalSurvivalTime = survivalTime;
         timer.SetActive(true);
         // go back to the center
         owner.setInvulnerable(true);
         this.transform.position = new Vector3(0, 0, 0);
         // reset all tiles, set them to permanently disappear
-        // mark the whole floor for permanent destruction, then interrupt the states of the island tiles
         List<FloorTile> allTiles = GameObject.Find("FloorTileManager").GetComponent<FloorTileManager>().getAllTiles();
         foreach (FloorTile tile in allTiles) {
             tile.StopAllCoroutines();
@@ -33,11 +33,8 @@ public class TBPhase4 : Phase
     public override IEnumerator phaseLoop()
     {
         while (true) {
-            // delay
             owner.cast("Bomb");
             yield return new WaitForSeconds(interval);
-            // laser!!
-
             owner.cast("Ring");
         }
     }
@@ -54,7 +51,7 @@ public class TBPhase4 : Phase
     void Update()
     {
         if (active) {
-            timerText.text = string.Format("{0:##.##}", survivalTime);
+            timerContent.fillAmount = survivalTime / totalSurvivalTime;
             survivalTime -= Time.deltaTime;
             if (survivalTime < 0) {
                 active = false;
