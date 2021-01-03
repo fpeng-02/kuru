@@ -7,6 +7,6 @@ public class LevelSelect : MonoBehaviour
 {
     public void LoadBoss(int index)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + index);
+        SceneManager.LoadScene(index);
     }
 }

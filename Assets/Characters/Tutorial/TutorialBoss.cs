@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialBoss : Entity
 {
@@ -35,6 +36,8 @@ public class TutorialBoss : Entity
                 nextPhase();
                 revived = true;
             } else {
+                GameObject.Find("MenuManager").GetComponent<MenuManager>().setPScene(SceneManager.GetActiveScene().buildIndex);
+                GameObject.Find("MenuManager").GetComponent<MenuManager>().death(false);
                 Destroy(this.gameObject);
             }
         }

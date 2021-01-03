@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class Entity : MonoBehaviour
 {
@@ -72,6 +73,8 @@ public abstract class Entity : MonoBehaviour
     {
         if (hitPoints <= 0) {
             // TODO: make this virtual so you can have unique death animations?
+            GameObject.Find("MenuManager").GetComponent<MenuManager>().setPScene(SceneManager.GetActiveScene().buildIndex);
+            GameObject.Find("MenuManager").GetComponent<MenuManager>().death(false);
             Destroy(this.gameObject);
         }
     }
