@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(0);
         
         Debug.Log("maybe working...");
-        Transform mainMenu = GameObject.FindGameObjectWithTag("MainMenu").gameObject.transform;
+        Transform mainMenu = GameObject.Find("Canvas").gameObject.transform;
         Debug.Log("Working");
 
         mainMenu.Find("LevelSelect").gameObject.SetActive(false);
