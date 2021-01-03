@@ -12,6 +12,7 @@ public class HexagonPhase : Phase
 
     public override IEnumerator beginPhase()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Boss"), LayerMask.NameToLayer("Environment"), false);
         GetComponent<SpriteRenderer>().sprite = hexagonSprite;
         rb2d = GetComponent<Rigidbody2D>();
         this.transform.position = Vector3.zero;
