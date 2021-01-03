@@ -54,7 +54,10 @@ public class FloorTile : MonoBehaviour
     public void setWarning() { StartCoroutine("warning"); }
     public void setPermanentWarning() { StartCoroutine("permanentWarning"); }
 
-    public void setLava() { StartCoroutine("lava"); }
+    public void setLava() {
+        this.transform.position = originalPos;
+        StartCoroutine("lava");
+    }
     public void setExtendedLava() { StartCoroutine("extendedLava"); }
     public void setPermanentLava() { sR.sprite = lavaSprite; state = FloorState.Lava; }
 

@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: dd2ae3aaf4eecb7459bf8066e072673d
+  - enabled: 1
+    path: Assets/Scenes/TutorialBoss.unity
+    guid: 6cda97b604178db4d83d11cffb7bb6bf
   - enabled: 1
     path: Assets/Scenes/Trailblazer.unity
     guid: 81e84cfefa2b67e4bb7fd49948b9623b
+  - enabled: 1
+    path: Assets/Scenes/Polygon.unity
+    guid: 2dd6676f9ea8e88479d8c3d073684f9e
   m_configObjects: {}
