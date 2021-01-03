@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  hitPoints: 100
+  hitPoints: 200
   entityName: Player
   baseMoveSpeed: 5
   lavaTickInterval: 0.25

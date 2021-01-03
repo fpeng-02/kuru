@@ -9,6 +9,7 @@ public class PentagonPhase : Phase
 
     public override IEnumerator beginPhase()
     {
+        this.transform.position = new Vector3(20, 20, 0);
         this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         GetComponent<SpriteRenderer>().sprite = pentagonSprite;
         // ignore collisions between the boss and the wall for this phases since the boss comes through the walls 

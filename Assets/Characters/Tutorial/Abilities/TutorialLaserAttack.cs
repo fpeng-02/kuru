@@ -14,7 +14,7 @@ public class TutorialLaserAttack : AbilitySequence
     // set "lr" in start
     void Start()
     {
-        lr = this.gameObject.AddComponent<LineRenderer>() as LineRenderer;
+        lr = this.gameObject.GetComponent<LineRenderer>() as LineRenderer;
         lr.enabled = false;
     }
 
@@ -42,8 +42,6 @@ public class TutorialLaserAttack : AbilitySequence
 
         lr.startWidth = 0.05f;
         lr.endWidth = 0.05f;
-        lr. startColor = Color.red;
-        lr.endColor = Color.green;
         lr.SetPosition(0, this.transform.position);
         lr.SetPosition(1, initHit.point);
 

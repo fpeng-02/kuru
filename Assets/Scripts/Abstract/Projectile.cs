@@ -43,6 +43,7 @@ public abstract class Projectile : MonoBehaviour
         // if the target is invuln, don't; just pass through it
         if (hitOtherEntity) {
             if (target.getInvulnerable()) {
+                Debug.Log("projectile tried to hurt invuln thing");
                 return;
             }
             foreach (Effect effect in effectList) {

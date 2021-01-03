@@ -93,7 +93,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 12be245646f66d043b75339831e0ba12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7061fc17b34da5848b5730c76797f6a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +121,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -376,7 +376,7 @@ MonoBehaviour:
   laserEffect: {fileID: 4519358536521594140, guid: 3a8642b25c417c9439499be1784edcd4,
     type: 3}
   chargeTime: 1
-  damageInterval: 0.1
+  damageInterval: 0.05
   beamPrepWidth: 0.2
   beamFireWidth: 2
 --- !u!114 &6596433360695609224
@@ -397,7 +397,7 @@ MonoBehaviour:
   laserEffect: {fileID: 4519358536521594140, guid: 3a8642b25c417c9439499be1784edcd4,
     type: 3}
   chargeTime: 1
-  damageInterval: 0.1
+  damageInterval: 0.05
   beamPrepWidth: 0.2
   beamFireWidth: 2
 --- !u!114 &453729271492370565
@@ -596,6 +596,7 @@ MonoBehaviour:
   survivalTime: 30
   interval: 2
   timer: {fileID: 0}
+  timerContent: {fileID: 0}
 --- !u!114 &159434515008101678
 MonoBehaviour:
   m_ObjectHideFlags: 0

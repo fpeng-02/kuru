@@ -36,8 +36,9 @@ public class TutorialBoss : Entity
                 nextPhase();
                 revived = true;
             } else {
-                GameObject.Find("MenuManager").GetComponent<MenuManager>().setPScene(SceneManager.GetActiveScene().buildIndex);
-                GameObject.Find("MenuManager").GetComponent<MenuManager>().death(false);
+                //GameObject.Find("MenuManager").GetComponent<MenuManager>().setPScene(SceneManager.GetActiveScene().buildIndex);
+                //GameObject.Find("MenuManager").GetComponent<MenuManager>().death(false);
+                SceneManager.LoadScene(0);
                 Destroy(this.gameObject);
             }
         }

@@ -24,7 +24,7 @@ public class TrianglePhaseA : Phase
         //Sprite to triangle
         owner.cast("Tri Laser");
         rb2d.velocity = Vector2.zero;
-        rb2d.angularVelocity = 10;
+        rb2d.angularVelocity = 40;
         yield return phaseLoop();
     }
 
@@ -42,7 +42,7 @@ public class TrianglePhaseA : Phase
         {
             Destroy(child.gameObject);
         }
-        polygonCollider.enabled = false;
+        //polygonCollider.enabled = false;
         polygonCollider.isTrigger = false;
     }
 

@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,13 +9,15 @@ public class TrianglePhaseB : Phase
     // Start is called before the first frame update
     public override IEnumerator beginPhase()
     {
+        owner.setInvulnerable(false);
         yield return phaseLoop();
     }
 
     public override IEnumerator phaseLoop()
     {
-        while(true)
+        while (true)
         {
+            Debug.Log(owner.getInvulnerable());
             owner.cast("Bouncing Stream");
             yield return new WaitForSeconds(interval);
         }
